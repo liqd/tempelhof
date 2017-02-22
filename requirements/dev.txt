@@ -1,0 +1,4 @@
+-r base.txt
+flake8==2.6.2
+flake8_docstrings==1.0.3
+isort==4.2.5
