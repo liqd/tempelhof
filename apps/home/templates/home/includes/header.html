@@ -1,12 +1,16 @@
-{% load menu %}
+{% load menu static %}
 
 {% get_menu 'Header' as topnav %}
 <header class="header">
     <nav class="l-wrapper header__nav">
+        <a class="header__logo-link" href="http://www.berlin.de/">
+            <img src="{% static 'images/berlin_de.svg' %}" class="header__logo"
+                 alt="Berlin.de" width="161" height="42">
+        </a>
         <ul class="header__nav-list">
             {% for item in topnav %}
-                <li>
-                    <a class="header__nav-item" href="{{ item.url }}">{{ item.title }}</a>
+                <li class="header__nav-item">
+                    <a class="header__nav-link" href="{{ item.url }}">{{ item.title }}</a>
                 </li>
             {% endfor %}
         </ul>
