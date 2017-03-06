@@ -1,0 +1,18 @@
+{% load menu static %}
+
+{% get_menu 'Header' as topnav %}
+<header class="nav nav--header">
+    <nav class="l-wrapper nav__container">
+        <a class="nav__left" href="http://www.berlin.de/">
+            <img src="{% static 'images/berlin_de.svg' %}"
+                 alt="Berlin.de" width="161" height="42">
+        </a>
+        <ul class="nav__list">
+            {% for item in topnav %}
+                <li class="nav__item">
+                    <a class="nav__link" href="{{ item.url }}">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>
