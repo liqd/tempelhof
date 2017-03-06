@@ -1,8 +1,13 @@
 {% extends "base.html" %}
+{% load wagtailimages_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
+    {% image self.image width-1920 as img %}
+    <div class="hero-unit" style="background-image: url({{ img.url }});">
+        <h1 class="hero-unit__title">{{ self.title }}</h1>
+    </div>
     {% for block in self.body %}
         {{ block }}
     {% endfor %}
