@@ -4,7 +4,8 @@ from modelcluster.models import ClusterableModel
 from wagtail.wagtailadmin import blocks
 from wagtail.wagtailadmin import edit_handlers
 from wagtail.wagtailcore import fields
-from wagtail.wagtailcore.models import Page, Orderable
+from wagtail.wagtailcore.models import Orderable
+from wagtail.wagtailcore.models import Page
 from wagtail.wagtailsnippets.models import register_snippet
 
 from apps.events.blocks import EventsTeaserBlock

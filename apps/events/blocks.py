@@ -19,5 +19,3 @@ class EventsTeaserBlock(blocks.StructBlock):
 
     class Meta:
         template = 'events/blocks/eventsteaser_block.html'
-
-
