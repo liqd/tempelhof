@@ -1,0 +1,15 @@
+{% load menu i18n %}
+{% get_menu 'Footer' as topnav %}
+
+<footer class="nav nav--footer">
+    <nav class="l-wrapper nav__container">
+        <span class="nav__left">{% trans 'Senate Department for Urban Development and Housing' %}</span>
+        <ul class="nav__list">
+            {% for item in topnav %}
+                <li class="nav__item">
+                    <a class="nav__link" href="{{ item.url }}">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</footer>
