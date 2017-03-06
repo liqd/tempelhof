@@ -1,4 +1,4 @@
-.header {
+.nav {
     padding: 1em 0;
     overflow: hidden;
 
@@ -13,13 +13,17 @@
     }
 }
 
-.header__logo-link {
+.nav--footer .nav__container {
+    border-top: 1px solid $border-color;
+    padding-top: 1.1em;
+    margin-top: 2em;
+}
+
+.nav__left {
     float: left;
 }
 
-.header__nav-list {
-    // for centered vertical alignment
-    padding: 0.8em 0 0 0;
+.nav__list {
     margin: 0;
 
     overflow: hidden;
@@ -27,8 +31,12 @@
     text-align: right;
     list-style: none;
 }
+.nav--header {
+    // for centered vertical alignment
+    padding: 0.8em 0 0 0;
+}
 
-.header__nav-item {
+.nav__item {
     display: inline-block;
     margin-left: 2em;
 }

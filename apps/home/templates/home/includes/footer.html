@@ -1,12 +1,9 @@
-{% load menu static %}
+{% load menu i18n %}
+{% get_menu 'Footer' as topnav %}
 
-{% get_menu 'Header' as topnav %}
-<header class="nav nav--header">
+<footer class="nav nav--footer">
     <nav class="l-wrapper nav__container">
-        <a class="nav__left" href="http://www.berlin.de/">
-            <img src="{% static 'images/berlin_de.svg' %}"
-                 alt="Berlin.de" width="161" height="42">
-        </a>
+        <span class="nav__left">{% trans 'Senate Department for Urban Development and Housing' %}</span>
         <ul class="nav__list">
             {% for item in topnav %}
                 <li class="nav__item">
@@ -15,4 +12,4 @@
             {% endfor %}
         </ul>
     </nav>
-</header>
+</footer>
