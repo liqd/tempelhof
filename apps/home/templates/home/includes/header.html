@@ -1,0 +1,14 @@
+{% load menu %}
+
+{% get_menu 'Header' as topnav %}
+<header class="header">
+    <nav class="l-wrapper header__nav">
+        <ul class="header__nav-list">
+            {% for item in topnav %}
+                <li>
+                    <a class="header__nav-item" href="{{ item.url }}">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>
