@@ -15,6 +15,7 @@
     color: contrast-color($brand-primary);
     background-color: $link-color;
 
+    &:focus,
     &:hover {
         color: contrast-color($brand-primary);
         background-color: $link-hover-color;
