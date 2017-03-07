@@ -138,4 +138,4 @@ WAGTAIL_SITE_NAME = "tempelhof"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'https://tempelhofer-feld.de'
+BASE_URL = 'http://localhost:8000'
