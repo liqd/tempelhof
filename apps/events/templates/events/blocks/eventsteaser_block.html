@@ -1,13 +1,15 @@
-{{ value.title }}
+<div class="l-center-8">
+    {{ value.title }}
 
-<ul>
-    {% for event in events %}
-        <li>
-            <h2>{{ event.title }}</h2>
-            <h3>{{ event.date }}</h3>
-            <p>
-                {{ event.time_start }} &ndash; {{ event.time_end }}
-            </p>
-        </li>
-    {% endfor %}
-</ul>
+    <ul>
+        {% for event in events %}
+            <li>
+                <h2>{{ event.title }}</h2>
+                <h3>{{ event.date }}</h3>
+                <p>
+                    {{ event.time_start }} &ndash; {{ event.time_end }}
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
