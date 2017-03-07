@@ -27,6 +27,8 @@ $font-size-lg: 1.25rem;
 $font-size-sm: 0.8rem;
 $font-size-xs: 0.64rem;
 
+$transition-duration: 0.2s;
+
 $breakpoint: 50em;
 
 @include grid-set('gutter', $padding);

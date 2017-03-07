@@ -1,0 +1,22 @@
+.button {
+    display: inline-block;
+    padding: 0.6em 1.5em;
+
+    border-radius: 0.25em;
+
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
+    transition: background-color $transition-duration;
+}
+
+.button--primary {
+    color: contrast-color($brand-primary);
+    background-color: $link-color;
+
+    &:hover {
+        color: contrast-color($brand-primary);
+        background-color: $link-hover-color;
+    }
+}

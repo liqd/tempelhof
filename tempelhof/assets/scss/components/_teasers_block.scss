@@ -1,0 +1,26 @@
+.teasers-block {
+    padding: 2em 0;
+
+    overflow: hidden;
+
+    background-color: $bg-secondary;
+}
+
+.teasers-block__item {
+    text-align: center;
+
+    &:not(:last-child) {
+        @media screen and (max-width: $breakpoint) {
+            margin-bottom: 2em;
+        }
+    }
+}
+
+.teasers-block__text {
+    margin-bottom: 0.7em;
+}
+
+.teasers-block__icon {
+    font-size: 3.6rem;
+    color: contrast-color($bg-secondary, $text-secondary);
+}
