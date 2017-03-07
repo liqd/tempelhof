@@ -34,8 +34,12 @@
 }
 
 .nav--header {
-    // for centered vertical alignment
-    padding: 0.8em 0 0;
+    padding: 1em 0 0.4em;
+
+    .nav__list {
+        // for centered vertical alignment
+        padding: 0.8em 0 0;
+    }
 }
 
 .nav__item {
