@@ -4,7 +4,7 @@
 
     a {
         color: inherit;
-        transition: color 0.2s;
+        transition: color $transition-duration;
         text-decoration: none;
 
         &:hover,

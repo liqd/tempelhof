@@ -1,4 +1,4 @@
-from wagtail.wagtailadmin import blocks
+from wagtail.wagtailcore import blocks
 
 from apps.events.models import EventPage
 
