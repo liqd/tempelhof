@@ -1,0 +1,8 @@
+@import "~roboto-fontface/css/mixins.scss";
+$roboto-font-path: '~roboto-fontface/fonts';
+@include roboto-font('Roboto','Regular', 400, normal);
+@include roboto-font('Roboto','RegularItalic', 400, italic);
+@include roboto-font('Roboto','Medium', 500, normal);
+@include roboto-font('Roboto','Bold', 700, normal);
+// so the browser doesn't generate its own bold version
+@include roboto-font('Roboto','Bold', 800, normal);
