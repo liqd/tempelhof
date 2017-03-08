@@ -11,10 +11,13 @@
                         <p class="projects-block__date">{{ project.start_date }} &ndash; {{ project.end_date }}</p>
                         <h3 class="projects-block__heading" id="project-{{ forloop.counter }}">{{ project.title }}</h3>
                         <p>{{ project.description }}</p>
-                        <a href="{{ project.url }}" aria-describedby="project-{{ forloop.counter }}">{% trans 'go to project' %}</a>
+                        <a href="{{ project.link }}" target="_blank"
+                           aria-describedby="project-{{ forloop.counter }}">
+                            <i class="fa fa-share" aria-hidden="true"></i> {% trans 'go to project' %}
+                        </a>
                     </div>
                 </div>
             {% endfor %}
-        s</div>
+        </div>
     </div>
 </div>

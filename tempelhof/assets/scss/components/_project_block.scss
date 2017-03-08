@@ -5,6 +5,8 @@
 }
 
 .projects-block__title {
+    margin: 0 0 1em;
+
     text-align: center;
     color: contrast-color($brand-primary);
 }
@@ -26,8 +28,11 @@
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.7px;
+    color: contrast-color($body-bg, $text-secondary);
 }
 
 .projects-block__img {
-    float: left;
+    @media screen and (min-width: $breakpoint) {
+        float: left;
+    }
 }
