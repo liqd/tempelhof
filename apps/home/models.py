@@ -35,6 +35,15 @@ class HomePage(Page):
     ]
 
 
+class SimplePage(Page):
+    body = fields.RichTextField(blank=True)
+
+    content_panels = [
+        edit_handlers.FieldPanel('title'),
+        edit_handlers.FieldPanel('body'),
+    ]
+
+
 class MenuItem(models.Model):
     title = models.CharField(max_length=255)
     link_page = models.ForeignKey('wagtailcore.Page')
