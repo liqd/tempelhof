@@ -8,3 +8,11 @@ install:
   - pip install -r requirements/dev.txt
 script:
   - ./node_modules/.bin/polylint -F
+deploy:
+  - provider: script
+    script: scripts/deploy.sh
+    on:
+      branch: master
+env:
+  global:
+    secure: HkzbvQgKBV36pgL3Bouk6dWZ/T5ThVJunXHtAVWmKO4ZhFyHGQVrV3VSasnIJQ5spoBbNtU/q57JNMu1NIF764S9DhtJlkOH5xOumIaKxIqlPUKebIgZ29ZRKBAiCA99FXpMop/LFVZziuAIm4BshvGa2yuOP/so9b02etZDDWZ47lBYW/RYOKtKno//vL6pAQNyMzCjDsVTiCbwLG5XpnvwyWWFwpuPnn4dlIOQo5aaG2B4yNoijoz+S6aBiVAA5IsA6G5nmXNIgMLMHV48gfvnMbEpkWCRbd/1rEduAolIxSI9gEsaBek3H7WHQRd5/bp5hXCrSwGaplCv1mW+efmxMfEVxe13D8Z//I9RwlT4wypKKlzbYdUrJL0ze9GqJWr4ScV5NBa9fLbauW3RZK1MaxU8ewLsd/HMCrYddHIZoIAHz2fyUskHxsxN4UVGEv6M+oFeNLgKlTe37nZZHsHIf9fhdE2Rb8DFJEE7q1dEoP2tiDpzP+MRtWBdng2sHQn/TvO63FX28B6xupg3CTbk34QntLvMKJ5h7mpeTLjRAALbieXfVO5hEGCb95RvBaAdF4wbIkUYZJKglfjiNDaMZPK6P9hAa+vyUh3D75Kui7oE6W1nlZcVBMkGYSB903rXtmKTldIbRuKOBsorBTQ6T2ry9FWmB4kQ/D7Wse0=
