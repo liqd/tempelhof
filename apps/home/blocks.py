@@ -1,15 +1,13 @@
 from wagtail.wagtailcore import blocks
 
+from apps.contrib.blocks import IconBlock
+
 
 class TeaserBlock(blocks.StructBlock):
     text = blocks.RichTextBlock()
     button_text = blocks.CharBlock()
     button_link = blocks.PageChooserBlock()
-    icon = blocks.ChoiceBlock([
-        ('users', 'Participation'),
-        ('file', 'Document'),
-        ('archive', 'Archive'),
-    ])
+    icon = IconBlock()
 
     class Meta:
         template = 'home/blocks/teaser_block.html'
