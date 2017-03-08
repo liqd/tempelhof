@@ -1,7 +1,7 @@
 {% load wagtailcore_tags %}
 
 <div class="teasers-block__item l-col-3">
-    <i class="fa fa-{{ value.icon }} teasers-block__icon"></i>
+    <i class="fa {{ value.icon }} teasers-block__icon"></i>
     <div class="teasers-block__text">{{ value.text|richtext }}</div>
     <a href="{% pageurl value.button_link %}" class="button button--primary">{{ value.button_text }}</a>
 </div>
