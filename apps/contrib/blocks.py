@@ -16,6 +16,3 @@ class IconBlock(FieldBlock):
         self.field = ChoiceField(choices=[
             (icon['classname'], icon['name']) for icon in icons
         ])
-
-
-
