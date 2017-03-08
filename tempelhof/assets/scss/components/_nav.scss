@@ -4,12 +4,12 @@
 
     a {
         color: inherit;
-        transition: color 0.2s;
+        transition: color $transition-duration;
         text-decoration: none;
 
         &:hover,
         &:focus {
-            color: $brand-secondary;
+            color: $brand-primary;
         }
     }
 }
@@ -34,8 +34,12 @@
 }
 
 .nav--header {
-    // for centered vertical alignment
-    padding: 0.8em 0 0;
+    padding: 1em 0 0.4em;
+
+    .nav__list {
+        // for centered vertical alignment
+        padding: 0.8em 0 0;
+    }
 }
 
 .nav__item {

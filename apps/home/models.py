@@ -1,8 +1,8 @@
 from django.db import models
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
-from wagtail.wagtailadmin import blocks
 from wagtail.wagtailadmin import edit_handlers
+from wagtail.wagtailcore import blocks
 from wagtail.wagtailcore import fields
 from wagtail.wagtailcore.models import Orderable
 from wagtail.wagtailcore.models import Page
@@ -10,6 +10,7 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.models import register_snippet
 
 from apps.events.blocks import EventsTeaserBlock
+from apps.home.blocks import TeaserListBlock
 from apps.projects.blocks import CurrentProjectsListBlock
 
 
@@ -24,8 +25,10 @@ class HomePage(Page):
 
     body = fields.StreamField([
         ('events_list', EventsTeaserBlock(icon='date')),
-        ('text', blocks.RichTextBlock()),
-        ('projects', CurrentProjectsListBlock())
+        ('text', blocks.RichTextBlock(icon='doc-full',
+                                      template='home/blocks/text.html')),
+        ('teasers', TeaserListBlock()),
+        ('projects', CurrentProjectsListBlock()),
     ])
 
     content_panels = Page.content_panels + [

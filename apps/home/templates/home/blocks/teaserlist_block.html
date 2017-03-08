@@ -1,0 +1,9 @@
+{% load wagtailcore_tags %}
+
+<div class="teasers-block">
+    <div class="l-wrapper">
+        {% for teaser in self.teasers %}
+            {% include_block teaser %}
+        {% endfor %}
+    </div>
+</div>

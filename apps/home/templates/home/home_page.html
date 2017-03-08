@@ -9,6 +9,12 @@
         <h1 class="hero-unit__title">{{ self.title }}</h1>
     </div>
     {% for block in self.body %}
-        {{ block }}
+        {% if block.block_type == 'teasers' %}
+            {{ block }}
+        {% else %}
+            <div class="l-wrapper">
+                {{ block }}
+            </div>
+        {% endif %}
     {% endfor %}
 {% endblock %}
