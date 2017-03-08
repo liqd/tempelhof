@@ -1,14 +1,10 @@
 from wagtail.wagtailcore import blocks
-from wagtail.wagtailimages import blocks as image_blocks
+
+from apps.projects.models import ProjectPage
 
 
-class CurrentProjectBlock(blocks.StructBlock):
-    title = blocks.CharBlock()
-    description = blocks.CharBlock()
-    image = image_blocks.ImageChooserBlock()
-    date_start = blocks.DateBlock()
-    date_end = blocks.DateBlock()
-    link = blocks.URLBlock()
+class CurrentProjectBlock(blocks.PageChooserBlock):
+    target_model = ProjectPage
 
     class Meta:
         template = 'projects/blocks/project_block.html'

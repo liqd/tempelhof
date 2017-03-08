@@ -10,6 +10,7 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.models import register_snippet
 
 from apps.events.blocks import EventsTeaserBlock
+from apps.projects.blocks import CurrentProjectsListBlock
 
 
 class HomePage(Page):
@@ -23,7 +24,8 @@ class HomePage(Page):
 
     body = fields.StreamField([
         ('events_list', EventsTeaserBlock(icon='date')),
-        ('text', blocks.RichTextBlock())
+        ('text', blocks.RichTextBlock()),
+        ('projects', CurrentProjectsListBlock())
     ])
 
     content_panels = Page.content_panels + [
