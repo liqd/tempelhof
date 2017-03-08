@@ -31,6 +31,8 @@ class HomePage(Page):
         edit_handlers.StreamFieldPanel('body'),
     ]
 
+    parentpage_type = []
+
 
 class MenuItem(models.Model):
     title = models.CharField(max_length=255)
