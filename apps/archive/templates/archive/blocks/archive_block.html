@@ -1,0 +1,15 @@
+<div class="l-center-8">
+    <div class="left">
+        {{ time }}
+    </div>
+    <div class="right">
+        <h3>{{ title }}</h3>
+        <p>{{ text }}</p>
+        <ul>
+            <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+            {% for doc in documents %}
+                <li><a href="{{ doc.url }}">{{ doc.label }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
