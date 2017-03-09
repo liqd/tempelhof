@@ -1,0 +1,23 @@
+{% load wagtailcore_tags wagtailimages_tags i18n %}
+<div class="projects-block">
+    <div class="l-wrapper">
+        <div class="l-center-8">
+            <h2 class="projects-block__title">{{ self.title }}</h2>
+            {% for project in self.projects %}
+                <div class="projects-block__item">
+                    {% image project.image fill-270x270 as img %}
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="projects-block__img">
+                    <div class="projects-block__body">
+                        <p class="projects-block__date">{{ project.start_date }} &ndash; {{ project.end_date }}</p>
+                        <h3 class="projects-block__heading" id="project-{{ forloop.counter }}">{{ project.title }}</h3>
+                        <p>{{ project.description }}</p>
+                        <a href="{{ project.link }}" target="_blank"
+                           aria-describedby="project-{{ forloop.counter }}">
+                            <i class="fa fa-share" aria-hidden="true"></i> {% trans 'go to project' %}
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

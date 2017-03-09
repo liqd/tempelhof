@@ -75,6 +75,7 @@ h6 {
 a {
     color: $link-color;
     font-weight: 700;
+
     text-decoration: none;
 
     &:hover,
@@ -100,6 +101,10 @@ textarea {
 ol,
 ul {
     padding-left: 1.5rem;
+}
+
+img {
+    height: auto;
 }
 
 button,
