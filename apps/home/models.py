@@ -11,6 +11,7 @@ from wagtail.wagtailsnippets.models import register_snippet
 
 from apps.events.blocks import EventsTeaserBlock
 from apps.home.blocks import TeaserListBlock, ColumnsListBlock
+from apps.projects.blocks import CurrentProjectsListBlock
 
 
 class HomePage(Page):
@@ -28,12 +29,15 @@ class HomePage(Page):
                                       template='home/blocks/text.html')),
         ('teasers', TeaserListBlock()),
         ('columns', ColumnsListBlock()),
+        ('projects', CurrentProjectsListBlock()),
     ])
 
     content_panels = Page.content_panels + [
         ImageChooserPanel('image'),
         edit_handlers.StreamFieldPanel('body'),
     ]
+
+    parentpage_type = []
 
 
 class MenuItem(models.Model):
