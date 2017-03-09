@@ -10,7 +10,8 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.models import register_snippet
 
 from apps.events.blocks import EventsTeaserBlock
-from apps.home.blocks import TeaserListBlock, ColumnsListBlock
+from apps.home.blocks import ColumnsListBlock
+from apps.home.blocks import TeaserListBlock
 
 
 class HomePage(Page):
