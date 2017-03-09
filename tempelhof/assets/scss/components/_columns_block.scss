@@ -1,0 +1,28 @@
+.columns-list__item {
+    border-radius: 0.5em;
+    background-color: $body-bg;
+    border: 1px solid $border-color;
+}
+
+.columns-list__title {
+    min-height: 4.3em;
+    padding: 1em;
+    margin-top: 0;
+
+    background-color: $bg-secondary;
+
+    i {
+        color: contrast-color($bg-secondary, $text-secondary);
+        margin-right: 0.5em;
+    }
+}
+
+.columns-list__body {
+    padding: 0.4em 1.6em;
+
+    a[href^="/documents"]:before {
+        content: '\f016';
+        font-family: 'FontAwesome';
+        margin-right: 0.3em;
+    }
+}

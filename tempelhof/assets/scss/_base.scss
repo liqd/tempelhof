@@ -74,7 +74,8 @@ h6 {
 
 a {
     color: $link-color;
-    text-decoration: underline;
+    font-weight: 700;
+    text-decoration: none;
 
     &:hover,
     &:focus {
