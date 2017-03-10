@@ -1,8 +1,8 @@
-from wagtail.wagtailadmin import edit_handlers
-from wagtail.wagtailimages import edit_handlers as image_handlers
-from wagtail.wagtailcore import fields
 from django.db import models
+from wagtail.wagtailadmin import edit_handlers
+from wagtail.wagtailcore import fields
 from wagtail.wagtailcore.models import Page
+from wagtail.wagtailimages import edit_handlers as image_handlers
 
 from .blocks import ArchiveListBlock
 
