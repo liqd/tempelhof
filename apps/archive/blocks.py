@@ -1,4 +1,5 @@
 from wagtail.wagtailcore import blocks
+from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 
 
 class LinkBlock(blocks.StructBlock):
@@ -11,7 +12,14 @@ class ArchiveBlock(blocks.StructBlock):
     text = blocks.TextBlock()
     time = blocks.CharBlock()
     link = LinkBlock()
-    documents = blocks.ListBlock(blocks.DocumentChooserBlock())
+    documents = blocks.ListBlock(DocumentChooserBlock())
 
     class Meta:
         template = 'archive/blocks/archive_block.html'
+
+
+class ArchiveListBlock(blocks.StructBlock):
+    archives = blocks.ListBlock(ArchiveBlock())
+
+    class Meta:
+        template = 'archive/blocks/archivelist_block.html'
