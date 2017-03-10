@@ -92,6 +92,10 @@ a:not([href]) {
     }
 }
 
+img {
+    height: auto;
+}
+
 textarea {
     resize: vertical;
 }
