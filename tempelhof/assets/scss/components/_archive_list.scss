@@ -1,9 +1,13 @@
-.archive-list {
-
-}
 
 .archive-list__item {
+    margin-bottom: 2.5em;
+    padding-top: 2.5em;
+    border-top: 1px solid $border-color;
     @include clearfix;
+
+    &:first-child {
+        border-top: 0;
+    }
 }
 
 .archive-list__date {
