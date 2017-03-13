@@ -1,6 +1,6 @@
 from django.db import models
-from wagtail.wagtailcore import fields as wagtail_fields
 from wagtail.wagtailadmin import edit_handlers
+from wagtail.wagtailcore import fields as wagtail_fields
 from wagtail.wagtailcore.models import Page
 
 from apps.contrib.mixins import PaginatorMixin
