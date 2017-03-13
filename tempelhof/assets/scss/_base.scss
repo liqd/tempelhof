@@ -92,6 +92,10 @@ a:not([href]) {
     }
 }
 
+img {
+    height: auto;
+}
+
 textarea {
     resize: vertical;
 }
@@ -99,10 +103,6 @@ textarea {
 ol,
 ul {
     padding-left: 1.5rem;
-}
-
-img {
-    height: auto;
 }
 
 button,
