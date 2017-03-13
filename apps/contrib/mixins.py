@@ -2,7 +2,7 @@ from django.core.paginator import Paginator
 
 
 class PaginatorMixin:
-    objects_per_page = 1
+    objects_per_page = 10
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
