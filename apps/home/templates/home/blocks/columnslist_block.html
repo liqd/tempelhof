@@ -1,0 +1,7 @@
+{% load wagtailcore_tags %}
+
+<div class="l-tiles-2 columns-list">
+    {% for column in self.columns %}
+        {% include_block column %}
+    {% endfor %}
+</div>

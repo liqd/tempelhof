@@ -18,3 +18,19 @@ class TeaserListBlock(blocks.StructBlock):
 
     class Meta:
         template = 'home/blocks/teaserlist_block.html'
+
+
+class ColumnBlock(blocks.StructBlock):
+    icon = IconBlock()
+    title = blocks.CharBlock()
+    text = blocks.RichTextBlock()
+
+    class Meta:
+        template = 'home/blocks/column_block.html'
+
+
+class ColumnsListBlock(blocks.StructBlock):
+    columns = blocks.ListBlock(ColumnBlock)
+
+    class Meta:
+        template = 'home/blocks/columnslist_block.html'
