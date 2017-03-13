@@ -8,7 +8,7 @@
                 <h1>{{ obj.title }}</h1>
                 {{ obj.text|richtext }}
             {% endfor %}
+            {% include 'contrib/includes/pagination.html' with page=paginator_page %}
         </div>
-
     </div>
 {% endblock %}
