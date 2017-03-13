@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+    <div class="l-wrapper">
+        <div class="l-center-6">
+            {% for obj in paginator_page.object_list %}
+                <h1>{{ obj.title }}</h1>
+                {{ obj.text|richtext }}
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}
