@@ -8,7 +8,6 @@
 @import 'base';
 @import 'layout';
 @import 'fonts';
-@import 'utilities';
 @import 'wagtail';
 
 @import "components/archive_list";
@@ -18,3 +17,5 @@
 @import "components/page_header";
 @import "components/project_block";
 @import "components/teasers_block";
+
+@import 'utilities';
