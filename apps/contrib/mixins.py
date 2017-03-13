@@ -1,4 +1,4 @@
-from django.core.paginator import Paginator
+from django.core import paginator
 
 
 class PaginatorMixin:
@@ -7,11 +7,18 @@ class PaginatorMixin:
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         objects = self.get_children().live().specific()
-        paginator = Paginator(objects, self.objects_per_page)
+        paginator_obj = paginator.Paginator(objects, self.objects_per_page)
         page_number = request.GET.get('p', 1)
 
+        try:
+            page = paginator_obj.page(page_number)
+        except paginator.PageNotAnInteger:
+            page = paginator_obj.page(1)
+        except paginator.EmptyPage:
+            page = paginator_obj.page(paginator_obj.num_pages)
+
         context.update({
-            'paginator_page': paginator.page(page_number),
+            'paginator_page': page,
         })
 
         return context
