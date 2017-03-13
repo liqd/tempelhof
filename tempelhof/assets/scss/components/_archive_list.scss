@@ -1,0 +1,27 @@
+.archive-list__item {
+    margin-bottom: 2.5em;
+    padding-top: 2.5em;
+    border-top: 1px solid $border-color;
+    @include clearfix;
+
+    &:first-child {
+        border-top: 0;
+    }
+}
+
+.archive-list__date {
+    @include grid-span(3, 0, (columns: 8, gutter: 2.1em));
+    text-align: right;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    color: contrast-color($body-bg, $text-secondary);
+    text-transform: uppercase;
+}
+
+.archive-list__body {
+    @include grid-span(5, 3, (columns: 8, gutter: 2.1em));
+}
+
+.archive-list__title {
+    margin-top: 0;
+}
