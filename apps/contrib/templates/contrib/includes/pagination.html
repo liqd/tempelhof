@@ -1,0 +1,32 @@
+{% load i18n %}
+{% if page.has_other_pages %}
+    <nav aria-label="{% trans 'Pagination' %}">
+        <ul class="pagination">
+            {% if page.has_previous %}
+                <li class="pagination__item">
+                    <a class="pagination__link pagination__link--prev button button--secondary" href="?p={{ page.previous_page_number }}">
+                        <i class="fa fa-chevron-left" aria-label="{% trans 'Previous page' %}"></i>
+                    </a>
+                </li>
+            {% endif %}
+            {% for i in page.paginator.page_range %}
+                {% if page.number == i %}
+                    <li class="pagination__item pagination__item--active">
+                        <span>{{ i }}</span>
+                    </li>
+                {% else %}
+                    <li class="pagination__item">
+                        <a class="pagination__link button button--secondary" href="?p={{ i }}">{{ i }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            {% if page.has_next %}
+                <li class="pagination__item">
+                    <a class="pagination__link pagination__link--next button button--secondary" href="?p={{ page.next_page_number }}">
+                        <i class="fa fa-chevron-right" aria-label="{% trans 'Next page' %}"></i>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}
