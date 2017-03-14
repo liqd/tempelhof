@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="l-wrapper">
+            <h1 class="page-header__title">
+                {{ self.title }}
+            </h1>
+            <p class="l-center-6">{{ self.short_description }}</p>
+        </div>
+    </div>
+    <div class="l-wrapper">
+        <div class="l-center-6">
+            <a href="{% pageurl self.get_parent %}">Zurück zur Übersicht</a>
+            <dl>
+                <dt>Wann</dt>
+                <dd>
+                    <time datetime="{{ self.date|date:'Y-m-d' }}T{{ self.time_start|time:'H:i:s' }}">{{ self.date }} {{ self.time_start }}</time>
+                    -
+                    <time datetime="{{ self.date|date:'Y-m-d' }}T{{ self.time_end|time:'H:i:s' }}">{{ self.time_end }}</time>
+                </dd>
+
+                <dt>Wo</dt>
+                <dd>{{ self.place }}</dd>
+
+                <dt>Kontakt</dt>
+                <dd><a href="mailto:{{ self.contact }}">{{ self.contact }}</a></dd>
+            </dl>
+            <div>
+                {{ self.description|richtext }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
