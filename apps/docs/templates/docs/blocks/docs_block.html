@@ -1,0 +1,24 @@
+{% load wagtailimages_tags %}
+
+<div class="docs-block">
+    <h2 class="docs-block__title">{{ value.title }}</h2>
+    <div class="docs-block__body">
+        {% if value.images %}
+            {% for image in value.images %}
+                {% image image height-60 %}
+            {% endfor %}
+        {% endif %}
+        {% if value.documents %}
+            <ul>
+                {% for doc in value.documents %}
+                    <li>
+                        <a href="{{ doc.url }}">
+                            <i class="fa fa-file-o" aria-hidden="true"></i>
+                            {{ doc.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>

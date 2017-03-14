@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="l-wrapper">
+            <h1 class="page-header__title">
+                <i class="fa fa-archive" aria-hidden="true"></i> {{ self.title }}
+            </h1>
+            <p class="l-center-6">{{ self.description }}</p>
+        </div>
+    </div>
+    <div class="l-wrapper">
+        <div class="l-center-6">
+            {% for block in self.body %}
+                {{ block }}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
