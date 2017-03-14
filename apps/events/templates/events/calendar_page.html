@@ -12,11 +12,11 @@
     <div class="l-wrapper">
         <div class="l-center-8">
             <ul>
-                {% for event in self.get_children %}
+                {% for event in self.get_children.specific %}
                     <li>
-                        <h2><a href="{% pageurl event %}">{{ event.eventpage.title }}</a></h2>
-                        <p>{{ event.eventpage.short_description }}</p>
-                        <time datetime="{{ event.eventpage.date|date:'Y-m-d' }}">{{ event.eventpage.date }}</time>
+                        <h2><a href="{% pageurl event %}">{{ event.title }}</a></h2>
+                        <p>{{ event.short_description }}</p>
+                        <time datetime="{{ event.date|date:'Y-m-d' }}">{{ event.eventpage.date }}</time>
                     </li>
                 {% endfor %}
             </ul>
