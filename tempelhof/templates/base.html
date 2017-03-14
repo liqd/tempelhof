@@ -32,6 +32,8 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
+
+        {% include 'portal_header.html' %}
         {% include 'home/includes/header.html' %}
 
         <main>{% block content %}{% endblock %}</main>
