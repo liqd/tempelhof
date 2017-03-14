@@ -1,0 +1,15 @@
+<div class="docs-block">
+    <h2 class="docs-block__title">{{ value.title }}</h2>
+    <div class="docs-block__body">
+        <ul>
+            {% for doc in value.documents %}
+                <li>
+                    <a href="{{ doc.url }}">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        {{ doc.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
