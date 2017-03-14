@@ -1,6 +1,6 @@
 from wagtail.wagtailcore import blocks
-from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtaildocs.blocks import DocumentChooserBlock
+from wagtail.wagtailimages.blocks import ImageChooserBlock
 
 
 class DocsBlock(blocks.StructBlock):
