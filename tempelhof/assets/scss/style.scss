@@ -2,6 +2,7 @@
 @import '~sass-planifolia/sass/clearfix';
 @import '~sass-planifolia/sass/grid';
 @import '~sass-planifolia/sass/contrast';
+@import '~flatpickr/dist/flatpickr.css';
 
 @import 'variables';
 
@@ -11,6 +12,7 @@
 @import 'wagtail';
 
 @import "components/button";
+@import "components/calendar";
 @import "components/hero_unit";
 @import "components/nav";
 @import "components/project_block";

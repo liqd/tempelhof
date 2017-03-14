@@ -1,0 +1,33 @@
+.flatpickr-calendar {
+    background-color: $bg-secondary;
+    box-shadow: none;
+    border-radius: 0.25em;
+}
+
+.flatpickr-day {
+    background: $brand-primary;
+    color: contrast-color($brand-primary);
+    border-color: $brand-primary;
+
+    &:hover,
+    &:focus,
+    &.selected {
+        background: $link-hover-color;
+        border-color: $link-hover-color;
+    }
+
+    &.selected:hover,
+    &.selected:focus {
+        background: $link-hover-color;
+        border-color: $link-hover-color;
+    }
+
+    &.disabled {
+        color: contrast-color($bg-secondary)
+    }
+
+    &.disabled.prevMonthDay,
+    &.disabled.nextMonthDay {
+        color: $text-secondary
+    }
+}

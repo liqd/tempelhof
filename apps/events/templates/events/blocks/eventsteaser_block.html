@@ -1,6 +1,6 @@
 <div class="l-center-8">
     {{ value.title }}
-
+    <div id="calendar" class="calendar"></div>
     <ul>
         {% for event in events %}
             <li>
@@ -13,3 +13,6 @@
         {% endfor %}
     </ul>
 </div>
+<script>
+    var eventsData = {{ js_data|safe }}
+</script>
