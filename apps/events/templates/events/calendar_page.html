@@ -17,7 +17,7 @@
                         <time
                             class="calendar-entry__date"
                             datetime="{{ event.date|date:'Y-m-d' }}"
-                        >{{ event.eventpage.date|date:"SHORT_DATE_FORMAT" }}</time>
+                        >{{ event.date|date:"SHORT_DATE_FORMAT" }}</time>
                         <h2 class="calendar-entry__title">
                             <a href="{% pageurl event %}">{{ event.title }}</a>
                         </h2>
