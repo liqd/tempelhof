@@ -5,8 +5,14 @@
     <div class="l-wrapper">
         <div class="l-center-6">
             {% for obj in paginator_page.object_list %}
-                <h1>{{ obj.title }}</h1>
-                {{ obj.text|richtext }}
+                <article class="blog-entry">
+                    <h2 class="blog-entry__title">{{ obj.title }}</h2>
+                    {{ obj.text|richtext }}
+                    <time
+                        class="blog-entry__date"
+                        datetime="{{ obj.first_published_at|date:'Y-m-d' }}"
+                    >{{ obj.first_published_at|date:"SHORT_DATE_FORMAT" }}</time>
+                </article>
             {% endfor %}
             {% include 'contrib/includes/pagination.html' with page=paginator_page %}
         </div>
