@@ -4,7 +4,7 @@
 {% block content %}
     <div class="l-wrapper">
         <div class="l-center-6">
-            {% for obj in paginator_page.object_list %}
+            {% for obj in paginator_page.object_list.reverse %}
                 <article class="blog-entry">
                     <h2 class="blog-entry__title">{{ obj.title }}</h2>
                     {{ obj.text|richtext }}
