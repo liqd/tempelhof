@@ -16,9 +16,9 @@
             <dl>
                 <dt>Wann</dt>
                 <dd>
-                    <time datetime="{{ self.date|date:'Y-m-d' }}T{{ self.time_start|time:'H:i:s' }}">{{ self.date }} {{ self.time_start }}</time>
+                    <time datetime="{{ self.date|date:'Y-m-d' }}T{{ self.time_start|time:'H:i:s' }}">{{ self.date|date:"SHORT_DATE_FORMAT" }} {{ self.time_start|time:"TIME_FORMAT" }}</time>
                     -
-                    <time datetime="{{ self.date|date:'Y-m-d' }}T{{ self.time_end|time:'H:i:s' }}">{{ self.time_end }}</time>
+                    <time datetime="{{ self.date|date:'Y-m-d' }}T{{ self.time_end|time:'H:i:s' }}">{{ self.time_end|time:"TIME_FORMAT" }}</time>
                 </dd>
 
                 <dt>Wo</dt>

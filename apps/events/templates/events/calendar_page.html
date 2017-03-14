@@ -16,7 +16,7 @@
                     <li>
                         <h2><a href="{% pageurl event %}">{{ event.title }}</a></h2>
                         <p>{{ event.short_description }}</p>
-                        <time datetime="{{ event.date|date:'Y-m-d' }}">{{ event.eventpage.date }}</time>
+                        <time datetime="{{ event.date|date:'Y-m-d' }}">{{ event.eventpage.date|date:"SHORT_DATE_FORMAT" }}</time>
                     </li>
                 {% endfor %}
             </ul>
