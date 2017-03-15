@@ -23,11 +23,11 @@
     }
 
     &.disabled {
-        color: contrast-color($bg-secondary)
+        color: contrast-color($bg-secondary);
     }
 
     &.disabled.prevMonthDay,
     &.disabled.nextMonthDay {
-        color: $text-secondary
+        color: $text-secondary;
     }
 }
