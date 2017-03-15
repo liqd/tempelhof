@@ -12,7 +12,9 @@
     </div>
     <div class="l-wrapper">
         <div class="l-center-6">
-            <a href="{% pageurl self.get_parent %}">{% trans 'Back to index' %}</a>
+            <p>
+                <a href="{% pageurl self.get_parent %}"><i class="fa fa-chevron-left" aria-hidden="true"></i> {% trans 'Back to index' %}</a>
+            </p>
             <dl>
                 <dt>{% trans 'When' %}</dt>
                 <dd>
