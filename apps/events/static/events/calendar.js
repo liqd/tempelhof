@@ -3,7 +3,7 @@ const Flatpickr = require('flatpickr')
 const calendar = document.getElementById('calendar')
 
 if (calendar) {
-  var a = new Flatpickr(calendar, {
+  let calendarFlatpickr = new Flatpickr(calendar, {
     inline: true,
     enable: [
       date => {
