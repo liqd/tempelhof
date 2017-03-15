@@ -1,26 +1,33 @@
-.calendar-entry {
-    border-top: 1px solid $border-color;
-    padding: $spacer 0 0;
-
-    &:last-of-type {
-        border-bottom: 1px solid $border-color;
-    }
+.flatpickr-calendar {
+    background-color: $bg-secondary;
+    box-shadow: none;
+    border-radius: 0.25em;
 }
 
-.calendar-entry__title {
-    font-size: $font-size-lg;
-    margin-top: 0;
+.flatpickr-day {
+    background: $brand-primary;
+    color: contrast-color($brand-primary);
+    border-color: $brand-primary;
 
-    a {
-        color: inherit;
+    &:hover,
+    &:focus,
+    &.selected {
+        background: $link-hover-color;
+        border-color: $link-hover-color;
     }
-}
 
-.calendar-entry__date {
-    float: right;
+    &.selected:hover,
+    &.selected:focus {
+        background: $link-hover-color;
+        border-color: $link-hover-color;
+    }
 
-    font-weight: 800;
-    letter-spacing: 0.7px;
-    color: contrast-color($body-bg, $text-secondary);
-    text-transform: uppercase;
+    &.disabled {
+        color: contrast-color($bg-secondary);
+    }
+
+    &.disabled.prevMonthDay,
+    &.disabled.nextMonthDay {
+        color: $text-secondary;
+    }
 }

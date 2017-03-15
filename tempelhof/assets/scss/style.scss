@@ -2,6 +2,7 @@
 @import '~sass-planifolia/sass/clearfix';
 @import '~sass-planifolia/sass/grid';
 @import '~sass-planifolia/sass/contrast';
+@import '~flatpickr/dist/flatpickr.css';
 
 @import 'variables';
 
@@ -12,8 +13,9 @@
 
 @import "components/archive_list";
 @import "components/blog";
-@import "components/calendar";
 @import "components/button";
+@import "components/calendar";
+@import "components/calendar_entry";
 @import "components/footer";
 @import "components/header";
 @import "components/hero_unit";
