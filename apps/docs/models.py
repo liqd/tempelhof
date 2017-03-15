@@ -21,3 +21,4 @@ class DocsPage(Page):
     parent_page_types = [
         'home.HomePage'
     ]
+    subpage_types = []

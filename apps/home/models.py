@@ -38,7 +38,9 @@ class HomePage(Page):
         edit_handlers.StreamFieldPanel('body'),
     ]
 
-    parentpage_type = []
+    parent_page_types = [
+        'wagtailcore.Page'
+    ]
 
 
 class SimplePage(Page):
@@ -48,6 +50,11 @@ class SimplePage(Page):
         edit_handlers.FieldPanel('title'),
         edit_handlers.FieldPanel('body'),
     ]
+
+    parent_page_types = [
+        'home.HomePage'
+    ]
+    subpage_types = []
 
 
 class MenuItem(models.Model):

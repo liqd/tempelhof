@@ -5,7 +5,12 @@ from wagtail.wagtailcore.models import Page
 
 
 class CalendarPage(Page):
-    pass
+    parent_page_types = [
+        'home.HomePage'
+    ]
+    subpage_types = [
+        'events.EventPage'
+    ]
 
 
 class EventPage(Page):
@@ -41,3 +46,4 @@ class EventPage(Page):
     parent_page_types = [
         'events.CalendarPage'
     ]
+    subpage_types = []

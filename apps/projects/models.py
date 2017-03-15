@@ -39,3 +39,4 @@ class ProjectPage(Page):
     parent_page_types = [
         'ProjectIndexPage'
     ]
+    subpage_types = []

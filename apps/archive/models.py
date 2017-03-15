@@ -30,3 +30,4 @@ class ArchivePage(Page):
     parent_page_types = [
         'home.HomePage'
     ]
+    subpage_types = []
