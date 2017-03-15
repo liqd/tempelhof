@@ -11,10 +11,7 @@
 }
 
 .archive-list__date {
-    font-weight: 800;
-    letter-spacing: 0.7px;
-    color: contrast-color($body-bg, $text-secondary);
-    text-transform: uppercase;
+    @include secondary-text;
 
     @media (min-width: $breakpoint) {
         @include grid-span(3, 0, (columns: 8, gutter: 2.1em));
