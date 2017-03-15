@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags i18n %}
 
 {% block content %}
     <div class="page-header">
@@ -12,19 +12,19 @@
     </div>
     <div class="l-wrapper">
         <div class="l-center-6">
-            <a href="{% pageurl self.get_parent %}">Zurück zur Übersicht</a>
+            <a href="{% pageurl self.get_parent %}">{% trans 'Back to index' %}</a>
             <dl>
-                <dt>Wann</dt>
+                <dt>{% trans 'When' %}</dt>
                 <dd>
                     <time datetime="{{ self.date|date:'Y-m-d' }}T{{ self.time_start|time:'H:i:s' }}">{{ self.date|date:"SHORT_DATE_FORMAT" }} {{ self.time_start|time:"TIME_FORMAT" }}</time>
                     -
                     <time datetime="{{ self.date|date:'Y-m-d' }}T{{ self.time_end|time:'H:i:s' }}">{{ self.time_end|time:"TIME_FORMAT" }}</time>
                 </dd>
 
-                <dt>Wo</dt>
+                <dt>{% trans 'Where' %}</dt>
                 <dd>{{ self.place }}</dd>
 
-                <dt>Kontakt</dt>
+                <dt>{% trans 'Contact' %}</dt>
                 <dd><a href="mailto:{{ self.contact }}">{{ self.contact }}</a></dd>
             </dl>
             <div>
