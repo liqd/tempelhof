@@ -13,9 +13,16 @@
     background-color: $bg-secondary;
 
     i {
+        float: left;
         color: contrast-color($bg-secondary, $text-secondary);
         margin-right: 0.5em;
+        font-size: 2.5rem;
     }
+}
+
+.columns-list__title-text {
+    display: block;
+    overflow: hidden;
 }
 
 .columns-list__body {

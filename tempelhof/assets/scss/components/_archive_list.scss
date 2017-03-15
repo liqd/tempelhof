@@ -5,21 +5,31 @@
     @include clearfix;
 
     &:first-child {
+        padding-top: 0;
         border-top: 0;
     }
 }
 
 .archive-list__date {
-    @include grid-span(3, 0, (columns: 8, gutter: 2.1em));
-    text-align: right;
     font-weight: 800;
     letter-spacing: 0.7px;
     color: contrast-color($body-bg, $text-secondary);
     text-transform: uppercase;
+
+    @media (min-width: $breakpoint) {
+        @include grid-span(3, 0, (columns: 8, gutter: 2.1em));
+        text-align: right;
+    }
+
+    @media (max-width: $breakpoint) {
+        margin-bottom: 0.5em;
+    }
 }
 
 .archive-list__body {
-    @include grid-span(5, 3, (columns: 8, gutter: 2.1em));
+    @media (min-width: $breakpoint) {
+        @include grid-span(5, 3, (columns: 8, gutter: 2.1em));
+    }
 }
 
 .archive-list__title {
