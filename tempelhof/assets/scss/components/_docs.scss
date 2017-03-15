@@ -7,10 +7,15 @@
 }
 
 .docs-block__title {
-    font-size: $font-size-lg;
-    margin: 0;
+    display: block;
     padding: $padding / 2;
+    color: inherit;
     background-color: $bg-secondary;
+
+    h2 {
+        font-size: $font-size-lg;
+        margin: 0;
+    }
 }
 
 .docs-block__body {
