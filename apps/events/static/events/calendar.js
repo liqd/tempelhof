@@ -6,12 +6,16 @@ var a = new Flatpickr(calendar, {
   inline: true,
   enable: [
     date => {
-      return eventsData.filter(eventObj => {
-        // django outputs the date in iso-format which JS parses as local time
-        // possibly adding one or two hours
-        let eventDate = new Date(eventObj.date).setHours(0)
-        return date.getTime() === eventDate
-      }).length
+      return eventsData.some(eventObj => {
+        let dateParts = eventObj.date.split('-')
+        let year = parseInt(dateParts[0], 10)
+        let month = parseInt(dateParts[1], 10)
+        let day = parseInt(dateParts[2], 10)
+        let eventDate = new Date(year, month, day)
+        return date.getFullYear() === year
+          && date.getMonth() === month
+          && date.getDate() === day
+      })
     }
   ]
 })
