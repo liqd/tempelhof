@@ -1,8 +1,24 @@
 {% load wagtailimages_tags %}
 
 <div class="docs-block">
-    <h2 class="docs-block__title">{{ value.title }}</h2>
-    <div class="docs-block__body">
+    <a
+        class="docs-block__title"
+        href="#docs-block-{{ index }}-body"
+        data-toggle="collapse">
+        <h2
+            id="docs-block-{{ index }}-title"
+            aria-haspopup="true"
+            aria-expanded="false"
+        >
+            {{ value.title }}
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </h2>
+    </a>
+
+    <div
+        class="docs-block__body"
+        id="docs-block-{{ index }}-body"
+        aria-labelledby="docs-block-{{ index }}-title">
         {% if value.images %}
             {% for image in value.images %}
                 {% image image height-60 %}

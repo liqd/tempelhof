@@ -13,7 +13,7 @@
     <div class="l-wrapper">
         <div class="l-center-6">
             {% for block in self.body %}
-                {{ block }}
+                {% include_block block with index=forloop.counter %}
             {% endfor %}
         </div>
     </div>
