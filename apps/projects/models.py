@@ -4,6 +4,15 @@ from wagtail.wagtailcore.models import Page
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
 
+class ProjectIndexPage(Page):
+    parent_page_types = [
+        'home.HomePage'
+    ]
+    subpage_types = [
+        'ProjectPage'
+    ]
+
+
 class ProjectPage(Page):
     image = models.ForeignKey(
         'wagtailimages.Image',
@@ -29,13 +38,4 @@ class ProjectPage(Page):
 
     parent_page_types = [
         'ProjectIndexPage'
-    ]
-
-
-class ProjectIndexPage(Page):
-    subpage_types = [
-        'ProjectPage'
-    ]
-    parent_page_types = [
-        'home.HomePage'
     ]
