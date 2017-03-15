@@ -12,6 +12,8 @@ class EventPage(Page):
     date = models.DateField()
     time_start = models.TimeField()
     time_end = models.TimeField()
+    place = models.CharField(max_length=32)
+    contact = models.EmailField()
 
     short_description = models.CharField(max_length=56,
                                          help_text='Shown on the homepage.')
@@ -26,7 +28,9 @@ class EventPage(Page):
                     edit_handlers.FieldPanel('time_end')
                 ]
             ),
-        ], heading='Date and Time'),
+            edit_handlers.FieldPanel('place'),
+            edit_handlers.FieldPanel('contact'),
+        ], heading='Key Data'),
 
         edit_handlers.MultiFieldPanel([
             edit_handlers.RichTextFieldPanel('description'),

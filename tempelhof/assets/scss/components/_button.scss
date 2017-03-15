@@ -8,7 +8,7 @@
     text-align: center;
     text-decoration: none;
 
-    transition: background-color $transition-duration;
+    transition: background-color $transition-duration, color $transition-duration;
 }
 
 .button--primary {
@@ -19,5 +19,16 @@
     &:hover {
         color: contrast-color($brand-primary);
         background-color: $link-hover-color;
+    }
+}
+
+.button--secondary {
+    color: contrast-color($bg-secondary);
+    background-color: $bg-secondary;
+
+    &:focus,
+    &:hover {
+        color: contrast-color($brand-primary);
+        background-color: $brand-primary;
     }
 }

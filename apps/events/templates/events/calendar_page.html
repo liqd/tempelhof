@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="l-wrapper">
+            <h1 class="page-header__title">
+                <i class="fa fa-calendar" aria-hidden="true"></i> {{ self.title }}
+            </h1>
+        </div>
+    </div>
+    <div class="l-wrapper">
+        <div class="l-center-8">
+            <ul class="u-list-unstyled">
+                {% for event in self.get_children.specific %}
+                    <li class="calendar-entry">
+                        <time
+                            class="calendar-entry__date"
+                            datetime="{{ event.date|date:'Y-m-d' }}"
+                        >{{ event.date|date:"SHORT_DATE_FORMAT" }}</time>
+                        <h2 class="calendar-entry__title">
+                            <a href="{% pageurl event %}">{{ event.title }}</a>
+                        </h2>
+                        <p class="calendar-entry__description">{{ event.short_description }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

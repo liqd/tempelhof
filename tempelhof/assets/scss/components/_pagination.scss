@@ -1,0 +1,30 @@
+.pagination {
+    margin: 0;
+    padding: 0;
+    @include clearfix;
+
+    list-style: none;
+    text-align: center;
+}
+
+.pagination__item {
+    display: inline-block;
+    margin: 0 0.2em;
+}
+
+.pagination__link,
+.pagination__item--active {
+    padding: 0.4em 0.8em;
+    font-weight: 400;
+}
+
+.pagination__item--active {
+    background-color: $brand-primary;
+    color: contrast-color($brand-primary);
+    border-radius: 0.25em;
+}
+
+.pagination__link--next i,
+.pagination__link--prev i {
+    vertical-align: middle;
+}

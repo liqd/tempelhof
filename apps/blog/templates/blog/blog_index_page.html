@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="l-wrapper">
+            <h1 class="page-header__title">
+                <i class="fa fa-newspaper-o" aria-hidden="true"></i> {{ self.title }}
+            </h1>
+            <p class="l-center-6">{{ self.description }}</p>
+        </div>
+    </div>
+    <div class="l-wrapper">
+        <div class="l-center-6">
+            {% for obj in paginator_page.object_list.reverse %}
+                <article class="blog-entry">
+                    <h2 class="blog-entry__title">{{ obj.title }}</h2>
+                    {{ obj.text|richtext }}
+                    <time
+                        class="blog-entry__date"
+                        datetime="{{ obj.first_published_at|date:'Y-m-d' }}"
+                    >{{ obj.first_published_at|date:"SHORT_DATE_FORMAT" }}</time>
+                </article>
+            {% endfor %}
+            {% include 'contrib/includes/pagination.html' with page=paginator_page %}
+        </div>
+    </div>
+{% endblock %}
