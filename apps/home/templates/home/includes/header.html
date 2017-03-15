@@ -1,18 +1,28 @@
-{% load menu static %}
+{% load menu static i18n %}
 
 {% get_menu 'Header' as topnav %}
-<header class="nav nav--header">
-    <nav class="l-wrapper nav__container">
-        <a class="nav__left" href="http://www.berlin.de/">
-            <img src="{% static 'images/berlin_de.svg' %}"
-                 alt="Berlin.de" width="161" height="42">
-        </a>
-        <ul class="nav__list">
+<header class="header">
+    <nav class="l-wrapper header__container">
+        <span class="header__site-name">{{ self.get_site.site_name }}</span>
+        <button class="header__toggle button button--light">
+            <i class="fa fa-bars" aria-label="{% trans 'Menu' %}"></i>
+        </button>
+        <ul class="header__list">
             {% for item in topnav %}
-                <li class="nav__item">
-                    <a class="nav__link" href="{{ item.url }}">{{ item.title }}</a>
+                <li class="header__item">
+                    <a class="header__link" href="{{ item.url }}">{{ item.title }}</a>
                 </li>
             {% endfor %}
         </ul>
+        <div class="header__branding">
+            <p>{% trans 'Senate Department for the Environment, Transport and Climate Protection' %}</p>
+            <img src="{% static 'images/beberlin.svg' %}" alt="">
+        </div>
     </nav>
+    <div class="dialogue-box">
+        {# Static markup to allow the blue border with the spike from Berlin's CD #}
+        <div class="dialogue-box__left"></div>
+        <div class="dialogue-box__center"></div>
+        <div class="dialogue-box__right"></div>
+    </div>
 </header>

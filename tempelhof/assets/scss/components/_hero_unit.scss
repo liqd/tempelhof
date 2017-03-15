@@ -21,6 +21,10 @@
     @media (max-width: $breakpoint) {
         min-height: 350px;
     }
+  
+    &:first-child {
+        margin-top: -35px;
+    }
 }
 
 .hero-unit__title {

@@ -1,13 +1,13 @@
 {% load menu i18n %}
 {% get_menu 'Footer' as topnav %}
 
-<footer class="nav nav--footer">
-    <nav class="l-wrapper nav__container">
-        <span class="nav__left">{% trans 'Senate Department for Urban Development and Housing' %}</span>
-        <ul class="nav__list">
+<footer class="footer">
+    <nav class="l-wrapper footer__container">
+        <span class="footer__left">{% trans ' Senate Department for the Environment, Transport and Climate Protection' %}</span>
+        <ul class="footer__list">
             {% for item in topnav %}
-                <li class="nav__item">
-                    <a class="nav__link" href="{{ item.url }}">{{ item.title }}</a>
+                <li class="footer__item">
+                    <a class="footer__link" href="{{ item.url }}">{{ item.title }}</a>
                 </li>
             {% endfor %}
         </ul>

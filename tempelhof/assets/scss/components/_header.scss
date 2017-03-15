@@ -1,0 +1,116 @@
+.header {
+    position: relative;
+    z-index: 1;
+}
+
+.header__container {
+    overflow: visible;
+}
+
+.header__site-name {
+    display: block;
+    padding: 0.2em 0.3em;
+    border-left: 5px solid $berlin-primary;
+    margin-bottom: 0.8em;
+
+    font-size: $font-size-xl;
+    font-weight: bold;
+}
+
+.header__toggle {
+    position: absolute;
+    right: $padding;
+    top: 0;
+
+    @media (min-width: $breakpoint) {
+        display: none;
+    }
+}
+
+.header__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include clearfix;
+
+    @media (max-width: $breakpoint) {
+        display: none;
+
+        &.is-active {
+            display: block;
+        }
+    }
+}
+
+.header__item {
+    float: left;
+    margin-right: 2em;
+
+    @media (max-width: $breakpoint) {
+        float: none;
+        padding: 0.5em 0;
+        border-top: 1px solid $border-color;
+        margin-right: 0;
+
+        &:first-child {
+            border-top: 0;
+        }
+    }
+}
+
+.header__link {
+    color: contrast-color($body-bg);
+    font-weight: normal;
+
+    &:hover,
+    &:focus {
+        color: $brand-primary;
+    }
+}
+
+.header__branding {
+    position: absolute;
+    right: $padding;
+    bottom: -0.6em;
+    z-index: 1;
+
+    color: contrast-color($body-bg, $berlin-primary);
+    font-size: $font-size-sm;
+    text-align: right;
+
+    img {
+        width: 125px;
+        height: auto;
+    }
+
+    @media (max-width: $breakpoint) {
+        display: none;
+    }
+}
+
+.dialogue-box {
+    display: flex;
+
+    > div {
+        height: 43px;
+    }
+}
+
+.dialogue-box__left,
+.dialogue-box__right {
+    flex: 1 0 auto;
+    background-position: left center;
+    background-image: url('/static/images/dialoguebox_border.png');
+    background-repeat: repeat-x;
+}
+
+.dialogue-box__center {
+    flex: 0 1 70rem;
+    background-position: right -250px center;
+    background-image: url('/static/images/dialoguebox.png');
+    background-repeat: no-repeat;
+
+    @media (min-width: $breakpoint) {
+        background-position: right -150px center;
+    }
+}
