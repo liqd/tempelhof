@@ -1,6 +1,6 @@
-.nav {
+.footer {
     padding: 1em 0;
-    overflow: hidden;
+    @include clearfix;
 
     a {
         color: inherit;
@@ -15,17 +15,17 @@
     }
 }
 
-.nav--footer .nav__container {
+.footer__container {
     border-top: 1px solid $border-color;
     padding-top: 1.1em;
     margin-top: 2em;
 }
 
-.nav__left {
+.footer__left {
     float: left;
 }
 
-.nav__list {
+.footer__list {
     margin: 0;
 
     overflow: hidden;
@@ -34,16 +34,7 @@
     list-style: none;
 }
 
-.nav--header {
-    padding: 1em 0 0.4em;
-
-    .nav__list {
-        // for centered vertical alignment
-        padding: 0.8em 0 0;
-    }
-}
-
-.nav__item {
+.footer__item {
     display: inline-block;
     margin-left: 2em;
 }
