@@ -1,2 +1,3 @@
-var calendar = require('events/static/events/calendar.js')
-var collapse = require('./collapse.js')
+const collapse = require('./collapse.js')
+const menu = require('./menu')
+const calendar = require('events/static/events/calendar.js')
