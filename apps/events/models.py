@@ -1,11 +1,20 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 from wagtail.wagtailadmin import edit_handlers
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailcore.models import Page
 
 
 class CalendarPage(Page):
-    pass
+    class Meta:
+        verbose_name = _('Calendar')
+
+    parent_page_types = [
+        'home.HomePage'
+    ]
+    subpage_types = [
+        'events.EventPage'
+    ]
 
 
 class EventPage(Page):
@@ -38,6 +47,10 @@ class EventPage(Page):
         ], heading='Text'),
     ]
 
+    class Meta:
+        verbose_name = _('Event')
+
     parent_page_types = [
         'events.CalendarPage'
     ]
+    subpage_types = []
