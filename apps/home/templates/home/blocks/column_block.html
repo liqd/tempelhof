@@ -1,6 +1,9 @@
 {% load wagtailcore_tags %}
 
 <div class="columns-list__item">
-    <h2 class="columns-list__title"><i class="fa {{ self.icon }}"></i> {{ self.title }}</h2>
+    <h2 class="columns-list__title">
+        <i class="fa {{ self.icon }}" aria-hidden="true"></i>
+        <span class="columns-list__title-text">{{ self.title }}</span>
+    </h2>
     <div class="columns-list__body">{{ self.text|richtext }}</div>
 </div>

@@ -3,14 +3,14 @@
 
 {% block content %}
     <div class="page-header">
-        <div class="l-wrapper">
+        <div class="l-wrapper page-header__wrapper">
             <h1 class="page-header__title">
                 <i class="fa fa-archive" aria-hidden="true"></i> {{ self.title }}
             </h1>
             <p class="l-center-6">{{ self.description }}</p>
         </div>
+        {% image self.image fill-1920x600 %}
     </div>
-    {% image self.image fill-1920x600 %}
     <div class="l-wrapper">
         {% for block in self.body %}
             {{ block }}

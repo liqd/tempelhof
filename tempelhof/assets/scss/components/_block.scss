@@ -1,0 +1,12 @@
+.block {
+    margin-bottom: 3em;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// avoid white gap between the two coloured blocks
+.block-projects + .block-teasers {
+    margin-top: -3em;
+}

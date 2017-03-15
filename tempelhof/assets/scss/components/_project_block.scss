@@ -1,14 +1,14 @@
 .projects-block {
     padding: 2.5em 0;
 
-    background: $brand-primary;
+    background: $brand-secondary;
 }
 
 .projects-block__title {
     margin: 0 0 1em;
 
     text-align: center;
-    color: contrast-color($brand-primary);
+    color: contrast-color($brand-secondary);
 }
 
 .projects-block__item {
