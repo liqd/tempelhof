@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 from wagtail.wagtailadmin import edit_handlers
 from wagtail.wagtailcore import fields
 from wagtail.wagtailcore.models import Page
@@ -17,6 +18,9 @@ class DocsPage(Page):
         edit_handlers.FieldPanel('description'),
         edit_handlers.StreamFieldPanel('body'),
     ]
+
+    class Meta:
+        verbose_name = _('Documents')
 
     parent_page_types = [
         'home.HomePage'

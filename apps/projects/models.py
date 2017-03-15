@@ -1,10 +1,14 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 from wagtail.wagtailadmin import edit_handlers
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
 
 class ProjectIndexPage(Page):
+    class Meta:
+        verbose_name = _('Projects')
+
     parent_page_types = [
         'home.HomePage'
     ]
@@ -35,6 +39,9 @@ class ProjectPage(Page):
         edit_handlers.FieldPanel('end_date'),
         edit_handlers.FieldPanel('link'),
     ]
+
+    class Meta:
+        verbose_name = _('Project')
 
     parent_page_types = [
         'ProjectIndexPage'
