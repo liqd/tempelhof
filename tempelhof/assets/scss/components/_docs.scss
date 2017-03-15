@@ -1,0 +1,24 @@
+.docs-block {
+    border: solid 1px $border-color;
+    border-radius: 5px;
+
+    // make border-radius work with contents
+    overflow: hidden;
+}
+
+.docs-block__title {
+    font-size: $font-size-lg;
+    margin: 0;
+    padding: $padding / 2;
+    background-color: $bg-secondary;
+}
+
+.docs-block__body {
+    padding: $padding / 2;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
