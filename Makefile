@@ -2,6 +2,7 @@ VIRTUAL_ENV ?= .env
 NODE_BIN = node_modules/.bin
 SCSS_FILES := $(shell find 'tempelhof/assets/scss' -name '*.scss')
 JS_FILES := $(shell find 'tempelhof/assets/js' | grep '\.jsx\?$$')
+PO_FILES := $(shell find . -name '*.po')
 
 install:
 	npm install
@@ -12,7 +13,13 @@ install:
 webpack: $(SCSS_FILES) $(JS_FILES)
 	$(NODE_BIN)/webpack
 
-build: webpack
+makemessages:
+	$(VIRTUAL_ENV)/bin/python manage.py makemessages -l de
+
+compilemessages: $(PO_FILES)
+	$(VIRTUAL_ENV)/bin/python manage.py compilemessages
+
+build: webpack compilemessages
 
 server:
 	$(VIRTUAL_ENV)/bin/python3 manage.py runserver 8000
