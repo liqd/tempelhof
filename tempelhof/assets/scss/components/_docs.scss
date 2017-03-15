@@ -8,6 +8,7 @@
 
 .docs-block__title {
     display: block;
+    position: relative;
     padding: $padding / 2;
     color: inherit;
     background-color: $bg-secondary;
@@ -15,6 +16,16 @@
     h2 {
         font-size: $font-size-lg;
         margin: 0;
+    }
+
+    i {
+        position: absolute;
+        right: $padding / 2;
+        transition: transform 0.3s;
+    }
+
+    &[aria-expanded="true"] i {
+        transform: rotate(180deg);
     }
 }
 
