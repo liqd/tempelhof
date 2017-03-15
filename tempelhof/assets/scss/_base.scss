@@ -76,12 +76,14 @@ a {
     color: $link-color;
     font-weight: 700;
 
-    text-decoration: none;
-
     &:hover,
     &:focus {
         color: $link-hover-color;
     }
+}
+
+.icon-link {
+    text-decoration: none;
 }
 
 a:not([href]) {
