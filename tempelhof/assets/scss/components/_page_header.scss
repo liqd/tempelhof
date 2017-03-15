@@ -8,6 +8,10 @@
     img {
         display: block;
     }
+
+    &:first-child {
+        margin-top: -35px;
+    }
 }
 
 .page-header__wrapper {
