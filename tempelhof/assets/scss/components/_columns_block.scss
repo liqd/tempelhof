@@ -28,9 +28,13 @@
 .columns-list__body {
     padding: 0.4em 1.6em;
 
-    a[href^="/documents"]:before {
-        content: '\f016';
-        font-family: 'FontAwesome';
-        margin-right: 0.3em;
+    a[href^="/documents"] {
+        text-decoration: inherit;
+
+        &:before {
+            content: '\f016';
+            font-family: 'FontAwesome';
+            margin-right: 0.3em;
+        }
     }
 }

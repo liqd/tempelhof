@@ -7,14 +7,14 @@
         <p>{{ value.text }}</p>
         <ul class="u-list-unstyled">
             <li>
-                <a href="{{ value.link.url }}">
+                <a href="{{ value.link.url }}" class="icon-link">
                     <i class="fa fa-share" aria-hidden="true"></i>
                     {{ value.link.label }}
                 </a>
             </li>
             {% for doc in value.documents %}
                 <li>
-                    <a href="{{ doc.url }}">
+                    <a href="{{ doc.url }}" class="icon-link">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
                         {{ doc.title }}
                     </a>

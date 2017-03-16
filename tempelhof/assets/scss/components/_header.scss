@@ -60,6 +60,7 @@
 
 .header__link {
     color: contrast-color($body-bg);
+    text-decoration: inherit;
     font-weight: normal;
 
     &:hover,

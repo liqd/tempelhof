@@ -13,14 +13,11 @@
 
     a {
         color: inherit;
+        text-decoration: inherit;
     }
 }
 
 .calendar-entry__date {
+    @include secondary-text;
     float: right;
-
-    font-weight: 800;
-    letter-spacing: 0.7px;
-    color: contrast-color($body-bg, $text-secondary);
-    text-transform: uppercase;
 }
