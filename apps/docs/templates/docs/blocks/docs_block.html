@@ -21,7 +21,10 @@
         aria-labelledby="docs-block-{{ index }}-title">
         {% if value.images %}
             {% for image in value.images %}
-                {% image image height-60 %}
+                {% image image width-1440 as big_image %}
+                <a href="{{ big_image.url }}" class="lightbox-group" title="{{ image.title|title }}">
+                    {% image image height-60 %}
+                </a>
             {% endfor %}
         {% endif %}
         {% if value.documents %}
