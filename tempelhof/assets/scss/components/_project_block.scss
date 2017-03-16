@@ -25,10 +25,7 @@
 }
 
 .projects-block__date {
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.7px;
-    color: contrast-color($body-bg, $text-secondary);
+    @include secondary-text;
 }
 
 .projects-block__img {

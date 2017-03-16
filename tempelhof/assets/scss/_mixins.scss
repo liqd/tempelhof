@@ -1,0 +1,7 @@
+@mixin secondary-text {
+    font-size: $font-size-sm;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    color: contrast-color($body-bg, $text-secondary);
+    text-transform: uppercase;
+}
