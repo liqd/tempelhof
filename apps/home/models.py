@@ -12,12 +12,13 @@ from wagtail.wagtailsnippets.models import register_snippet
 from apps.events.blocks import EventsTeaserBlock
 from apps.home.blocks import ColumnsListBlock
 from apps.home.blocks import TeaserListBlock
+from apps.images.models import CustomImage
 from apps.projects.blocks import CurrentProjectsListBlock
 
 
 class HomePage(Page):
     image = models.ForeignKey(
-        'wagtailimages.Image',
+        CustomImage,
         null=True,
         blank=True,
         on_delete=models.SET_NULL,

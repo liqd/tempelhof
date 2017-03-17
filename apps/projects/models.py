@@ -19,7 +19,7 @@ class ProjectIndexPage(Page):
 
 class ProjectPage(Page):
     image = models.ForeignKey(
-        'wagtailimages.Image',
+        'images.CustomImage',
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
