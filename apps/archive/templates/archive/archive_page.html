@@ -10,6 +10,7 @@
             <p class="l-center-6">{{ self.description }}</p>
         </div>
         {% image self.image fill-1920x600 %}
+        {{ self.image.author }}
     </div>
     <div class="l-wrapper">
         {% for block in self.body %}

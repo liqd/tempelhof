@@ -6,6 +6,7 @@
         <a href="{% pageurl self.get_parent %}">back to {{ self.get_parent }}</a>
         <h1>{{ self.title }}</h1>
         {% image self.image fill-1920x600 %}
+        {{ self.image.author }}
         <p>{{ self.description }}</p>
     </div>
 {% endblock %}
