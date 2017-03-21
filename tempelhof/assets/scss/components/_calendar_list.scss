@@ -1,17 +1,23 @@
 .calendar-list {
     @include grid-span(4, 3, (columns: 7, gutter: 30px));
     padding: 0;
+    border-bottom: 1px solid $border-color;
+
     list-style: none;
 }
 
 .calendar-list__item {
-    border-top: 1px solid $border-color;
-    padding-top: 1.3em;
-
+    padding: 1.3em 1em 0;
     @include clearfix;
+    display: none;
 
-    &:last-child {
-        border-bottom: 1px solid $border-color;
+    &.is-active {
+        display: block;
+        border-top: 1px solid $border-color;
+    }
+
+    &.is-highlighted {
+        background-color: $brand-secondary;
     }
 
     i {

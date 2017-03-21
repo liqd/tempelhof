@@ -2,8 +2,8 @@
 {{ value.title }}
 <div id="calendar" class="calendar"></div>
 <ul class="calendar-list">
-    {% for event in events %}
-        <li class="calendar-list__item">
+    {% for event in events|dictsort:'date' %}
+        <li class="calendar-list__item" data-date="{{ event.date|date:'Y-n-d' }}">
             <i class="fa fa-calendar" aria-hidden="true"></i>
             <div class="calendar-list__body">
                 <h2 class="calendar-list__title"><a href="{% pageurl event %}">{{ event.title }}</a></h2>
