@@ -13,7 +13,7 @@ if (calendar) {
           let month = parseInt(dateParts[1], 10)
           let day = parseInt(dateParts[2], 10)
           return date.getFullYear() === year
-            && date.getMonth() === month
+            && date.getMonth() + 1 === month
             && date.getDate() === day
         })
       }
