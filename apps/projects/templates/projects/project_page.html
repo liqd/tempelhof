@@ -1,12 +1,25 @@
 {% extends 'base.html' %}
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load i18n wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
+    <div class="page-header">
+        <div class="l-wrapper page-header__wrapper">
+            <h1 class="page-header__title">
+                {{ self.title }}
+            </h1>
+        </div>
+        <div class="page-header__img-wrapper">
+            {% image self.image fill-1920x600 %}
+            <p class="img-author">&copy; {{ self.image.author }}</p>
+        </div>
+    </div>
     <div class="l-wrapper">
-        <a href="{% pageurl self.get_parent %}">back to {{ self.get_parent }}</a>
-        <h1>{{ self.title }}</h1>
-        {% image self.image fill-1920x600 %}
-        {{ self.image.author }}
-        <p>{{ self.description }}</p>
+        <div class="l-center-6">
+            <p>{{ self.description }}</p>
+            <a href="{{ self.link }}">
+                <i class="fa fa-share" aria-hidden="true"></i>
+                {% trans 'participate' %}
+            </a>
+        </div>
     </div>
 {% endblock %}
