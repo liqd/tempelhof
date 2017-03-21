@@ -9,8 +9,9 @@ from wagtail.wagtailcore.models import Page
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.models import register_snippet
 
-from apps.home.blocks import ColumnsListBlock, UpdatesBlock
+from apps.home.blocks import ColumnsListBlock
 from apps.home.blocks import TeaserListBlock
+from apps.home.blocks import UpdatesBlock
 from apps.projects.blocks import CurrentProjectsListBlock
 
 
