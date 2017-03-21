@@ -1,0 +1,31 @@
+.data-list {
+    @include clearfix;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 1.5em;
+}
+
+.data-list__term,
+.data-list__definition {
+    border-top: 1px solid $border-color;
+    padding: 0.8em 0;
+}
+
+.data-list__term {
+    margin: 0;
+
+    @media (min-width: $breakpoint) {
+        float: left;
+        width: 25%;
+    }
+}
+
+.data-list__definition {
+    margin: 0;
+
+    @media (min-width: $breakpoint) {
+        width: 75%;
+        overflow: hidden;
+
+        text-align: right;
+    }
+}

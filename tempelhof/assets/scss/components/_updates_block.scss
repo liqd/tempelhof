@@ -1,0 +1,27 @@
+.updates-block {
+    @include clearfix;
+}
+
+.updates-block__status {
+    padding: 0.75em 0.75em 0;
+    border: 1px solid $border-color;
+    border-radius: 0.5em;
+
+    @media (min-width: $breakpoint) {
+        @include grid-span(4, 0, (gutter: 50px));
+    }
+
+    time {
+        @include secondary-text;
+    }
+}
+
+.updates-block__title {
+    margin-top: 0.5em;
+}
+
+.updates-block__calendar {
+    @media (min-width: $breakpoint) {
+        @include grid-span(8, 4, (gutter: 50px));
+    }
+}

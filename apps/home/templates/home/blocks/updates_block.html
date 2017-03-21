@@ -1,0 +1,14 @@
+{% load wagtailcore_tags %}
+
+<div class="updates-block">
+    <div class="updates-block__status">
+        <time datetime="{{ value.status.first_published_at|date:'Y-m-d' }}">
+            {{ value.status.first_published_at|date:"SHORT_DATE_FORMAT" }}
+        </time>
+        <h2 class="updates-block__title">{{ value.status.title }}</h2>
+        {{ value.status.text|richtext }}
+    </div>
+    <div class="updates-block__calendar">
+        {{ value.calendar }}
+    </div>
+</div>
