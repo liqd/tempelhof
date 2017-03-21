@@ -7,6 +7,7 @@
     {% image self.image width-1920 as img %}
     <div class="hero-unit" style="background-image: url({{ img.url }});">
         <h1 class="hero-unit__title">{{ self.title }}</h1>
+        <p class="hero-unit__author">&copy; {{ self.image.author }}</p>
     </div>
     {% for block in self.body %}
         <div class="block block-{{ block.block_type }}">

@@ -15,7 +15,7 @@ class ArchivePage(Page):
 
     description = models.CharField(max_length=200)
     image = models.ForeignKey(
-        'wagtailimages.Image',
+        'images.CustomImage',
         null=True,
         blank=True,
         on_delete=models.SET_NULL,

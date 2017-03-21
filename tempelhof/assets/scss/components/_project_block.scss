@@ -29,6 +29,12 @@
 }
 
 .projects-block__img {
+    display: block;
+}
+
+.projects-block__img-wrapper {
+    position: relative;
+
     @media screen and (min-width: $breakpoint) {
         float: left;
     }

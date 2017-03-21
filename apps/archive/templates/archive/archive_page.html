@@ -9,7 +9,10 @@
             </h1>
             <p class="l-center-6">{{ self.description }}</p>
         </div>
-        {% image self.image fill-1920x600 %}
+        <div class="page-header__img-wrapper">
+            {% image self.image fill-1920x600 %}
+            <p class="img-author">&copy; {{ self.image.author }}</p>
+        </div>
     </div>
     <div class="l-wrapper">
         {% for block in self.body %}
