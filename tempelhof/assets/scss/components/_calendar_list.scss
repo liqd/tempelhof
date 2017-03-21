@@ -1,0 +1,48 @@
+.calendar-list {
+    @include grid-span(4, 3, (columns: 7, gutter: 30px));
+    padding: 0;
+    border-bottom: 1px solid $border-color;
+
+    list-style: none;
+}
+
+.calendar-list__item {
+    padding: 1.3em 1em 0;
+    @include clearfix;
+    display: none;
+
+    &.is-active {
+        display: block;
+        border-top: 1px solid $border-color;
+    }
+
+    &.is-highlighted {
+        background-color: $brand-secondary;
+    }
+
+    i {
+        margin-top: 0.5em;
+        float: left;
+
+        font-size: 2.5rem;
+        color: $text-secondary;
+    }
+}
+
+.calendar-list__body {
+    overflow: hidden;
+    padding-left: 1em;
+}
+
+.calendar-list__title {
+    margin: 0 0 0.05em;
+
+    font-size: $font-size-lg;
+    font-weight: bold;
+}
+
+.calendar-list__date {
+    margin: 0.5em 0 0.25em;
+
+    @include secondary_text;
+}

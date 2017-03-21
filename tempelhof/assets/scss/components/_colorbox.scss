@@ -1,0 +1,69 @@
+// Colorbox mostly has IDs only, so we have to use that for styling.
+/* stylelint-disable selector-no-id, selector-max-specificity  */
+#cboxOverlay {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    background-color: $bg-inverted;
+}
+
+#colorbox {
+    z-index: 11;
+    color: $text-color-inverted;
+}
+
+#cboxPrevious,
+#cboxNext {
+    height: $font-size-xxl;
+    margin: auto;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    font-size: $font-size-xxl;
+}
+
+#cboxPrevious {
+    left: -1.5em;
+}
+
+#cboxNext {
+    right: -1.5em;
+}
+
+#cboxClose {
+    position: absolute;
+    top: -1.5em;
+    right: 0;
+
+    font-size: $font-size-xxl;
+}
+
+#cboxLoadingOverlay {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    background-color: $bg-inverted;
+
+    &:before {
+        content: "";
+    }
+}
+
+#cboxCurrent,
+#cboxTitle {
+    margin-top: 0.5em;
+}
+
+#cboxTitle {
+    margin-right: 2em;
+}
+/* stylelint-enable */

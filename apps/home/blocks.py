@@ -1,6 +1,7 @@
 from wagtail.wagtailcore import blocks
 
 from apps.contrib.blocks import IconBlock
+from apps.events.blocks import EventsTeaserBlock
 
 
 class TeaserBlock(blocks.StructBlock):
@@ -27,6 +28,14 @@ class ColumnBlock(blocks.StructBlock):
 
     class Meta:
         template = 'home/blocks/column_block.html'
+
+
+class UpdatesBlock(blocks.StructBlock):
+    status = blocks.PageChooserBlock(target_model='blog.BlogEntryPage')
+    calendar = EventsTeaserBlock()
+
+    class Meta:
+        template = 'home/blocks/updates_block.html'
 
 
 class ColumnsListBlock(blocks.StructBlock):
