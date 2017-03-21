@@ -4,8 +4,12 @@ from wagtail.wagtailadmin import edit_handlers
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailcore.models import Page
 
+from apps.contrib.mixins import PaginatorMixin
 
-class CalendarPage(Page):
+
+class CalendarPage(PaginatorMixin, Page):
+    objects_per_page = 12
+
     class Meta:
         verbose_name = _('Calendar')
 
