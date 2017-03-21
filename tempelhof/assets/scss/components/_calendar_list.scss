@@ -1,0 +1,38 @@
+.calendar-list {
+    @include grid-span(4, 3, (columns: 7, gutter: 30px));
+    padding: 0;
+    list-style: none;
+}
+
+.calendar-list__item {
+    border-top: 1px solid $border-color;
+    padding-top: 1.3em;
+
+    @include clearfix;
+
+    &:last-child {
+        border-bottom: 1px solid $border-color;
+    }
+
+    i {
+        margin-top: 0.5em;
+        float: left;
+
+        font-size: 2.5rem;
+        color: $text-secondary;
+    }
+}
+
+.calendar-list__body {
+    overflow: hidden;
+    padding-left: 1em;
+}
+
+.calendar-list__title {
+    margin-top: 0;
+    margin-bottom: 0.05em;
+}
+
+.calendar-list__date {
+    margin-top: 0.5em;
+}

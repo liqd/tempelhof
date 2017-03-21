@@ -1,4 +1,8 @@
 .flatpickr-calendar {
+    @include grid-span(3, 0, (columns: 7));
+}
+
+.flatpickr-calendar {
     background-color: $bg-secondary;
     box-shadow: none;
     border-radius: 0.25em;
