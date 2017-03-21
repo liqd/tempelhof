@@ -29,7 +29,25 @@
 }
 
 .projects-block__img {
+    display: block;
+}
+
+.projects-block__img-wrapper {
+    position: relative;
+
     @media screen and (min-width: $breakpoint) {
         float: left;
     }
+}
+
+.projects-block__img-author {
+    padding: 0.3em;
+    margin-bottom: 0;
+
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
+
+    background-color: $bg-inverted;
+    color: contrast-color($bg-inverted);
 }
