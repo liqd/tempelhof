@@ -1,7 +1,14 @@
 .flatpickr-calendar {
+    @include grid-span(3, 0, (columns: 7));
+
     background-color: $bg-secondary;
     box-shadow: none;
     border-radius: 0.25em;
+
+    &.inline {
+        // flatpickr sets this to top: 2px for some reason
+        top: 0;
+    }
 }
 
 .flatpickr-day {

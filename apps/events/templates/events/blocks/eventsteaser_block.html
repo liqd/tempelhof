@@ -1,13 +1,16 @@
+{% load wagtailcore_tags %}
+
 {{ value.title }}
 <div id="calendar" class="calendar"></div>
-<ul>
-    {% for event in events %}
-        <li>
-            <h2>{{ event.title }}</h2>
-            <h3>{{ event.date }}</h3>
-            <p>
-                {{ event.time_start }} &ndash; {{ event.time_end }}
-            </p>
+<ul class="calendar-list">
+    {% for event in events|dictsort:'date' %}
+        <li class="calendar-list__item" data-date="{{ event.date|date:'Y-n-d' }}">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <div class="calendar-list__body">
+                <h2 class="calendar-list__title"><a href="{% pageurl event %}">{{ event.title }}</a></h2>
+                <h3 class="calendar-list__date">{{ event.date }}</h3>
+                <p>{{ event.short_description }}</p>
+            </div>
         </li>
     {% endfor %}
 </ul>
