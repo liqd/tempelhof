@@ -1,0 +1,10 @@
+{% load wagtailcore_tags %}
+
+<div class="updates-block">
+    <div class="updates-block__message">
+        {{ value.status.text|richtext }}
+    </div>
+    <div class="updates-block__calendar">
+        {{ value.calendar }}
+    </div>
+</div>
