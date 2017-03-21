@@ -27,6 +27,10 @@ if (calendar) {
       let selectorString = getSelectorString(instance)
       updateList(selectorString)
     },
+    onYearChange: (selectedDates, dateStr, instance) => {
+      let selectorString = getSelectorString(instance)
+      updateList(selectorString)
+    },
     onReady: (selectedDates, dateStr, instance) => {
       let selectorString = getSelectorString(instance)
       updateList(selectorString)
