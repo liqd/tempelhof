@@ -36,7 +36,7 @@ msgstr ""
 
 #: apps/contrib/templates/contrib/includes/pagination.html:8
 msgid "Previous page"
-msgstr "Vorherig Seite"
+msgstr "Vorherige Seite"
 
 #: apps/contrib/templates/contrib/includes/pagination.html:26
 msgid "Next page"
