@@ -1,5 +1,6 @@
 *__pycache__/
 *.sqlite3*
+*.mo
 node_modules
 tempelhof/static/*.css
 tempelhof/static/*.js
