@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-22 09:41+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps/archive/models.py:32
+msgid "Archive"
+msgstr "Archiv"
+
+#: apps/blog/models.py:18
+msgid "Blog"
+msgstr "Blog"
+
+#: apps/blog/models.py:37
+msgid "Blog Entry"
+msgstr "Blog Eintrag"
+
+#: apps/contrib/templates/contrib/includes/pagination.html:3
+msgid "Pagination"
+msgstr ""
+
+#: apps/contrib/templates/contrib/includes/pagination.html:8
+msgid "Previous page"
+msgstr "Vorherige Seite"
+
+#: apps/contrib/templates/contrib/includes/pagination.html:26
+msgid "Next page"
+msgstr "Nächste Seite"
+
+#: apps/docs/models.py:23
+msgid "Documents"
+msgstr "Dokumente"
+
+#: apps/events/models.py:14
+msgid "Calendar"
+msgstr "Kalender"
+
+#: apps/events/models.py:55
+msgid "Event"
+msgstr "Termin"
+
+#: apps/events/templates/events/event_page.html:16
+msgid "Back to index"
+msgstr "Zurück zur Übersicht"
+
+#: apps/events/templates/events/event_page.html:19
+msgid "When"
+msgstr "Wann"
+
+#: apps/events/templates/events/event_page.html:26
+msgid "Where"
+msgstr "Wo"
+
+#: apps/events/templates/events/event_page.html:29
+msgid "Contact"
+msgstr "Kontakt"
+
+#: apps/home/templates/home/includes/footer.html:6
+#: apps/home/templates/home/includes/header.html:18
+msgid "Senate Department for the Environment, Transport and Climate Protection"
+msgstr "Senatsverwaltung für Umwelt, Verkehr und Klimaschutz"
+
+#: apps/home/templates/home/includes/header.html:8
+msgid "Menu"
+msgstr "Menü"
+
+#: apps/projects/models.py:10
+msgid "Projects"
+msgstr "Projekte"
+
+#: apps/projects/models.py:44
+msgid "Project"
+msgstr "Projekt"
+
+#: apps/projects/templates/projects/blocks/projectslist_block.html:19
+msgid "go to project"
+msgstr "Zum Projekt"

@@ -1,5 +1,6 @@
 /* global eventsData */
 const Flatpickr = require('flatpickr')
+const FlatpickrLocale = require('flatpickr/dist/l10n/de.js')
 const $ = require('jquery')
 
 const calendar = document.getElementById('calendar')
@@ -10,6 +11,7 @@ if (calendar) {
 
   let calendarFlatpickr = new Flatpickr(calendar, {
     inline: true,
+    locale: FlatpickrLocale[$('html').attr('lang')],
     enable: [
       date => {
         return eventsData.some(eventObj => {

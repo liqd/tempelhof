@@ -74,7 +74,7 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'tempelhof.urls'
 
-LOCALE_PATHS = [os.path.join(PROJECT_DIR, 'locale')]
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 TEMPLATES = [
     {
