@@ -2,14 +2,16 @@
 {% get_menu 'Footer' as topnav %}
 
 <footer class="footer">
-    <nav class="l-wrapper footer__container">
-        <span class="footer__left">{% trans 'Senate Department for the Environment, Transport and Climate Protection' %}</span>
-        <ul class="footer__list">
-            {% for item in topnav %}
-                <li class="footer__item">
-                    <a class="footer__link" href="{{ item.url }}">{{ item.title }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    </nav>
+    <div class="l-wrapper">
+        <nav class="footer__container">
+            <span class="footer__left">{% trans 'Senate Department for the Environment, Transport and Climate Protection' %}</span>
+            <ul class="footer__list">
+                {% for item in topnav %}
+                    <li class="footer__item">
+                        <a class="footer__link" href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
 </footer>
