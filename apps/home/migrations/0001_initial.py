@@ -8,6 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('wagtailcore', '0029_unicode_slugfield_dj19'),
+        ('images', '__first__'),
     ]
 
     operations = [
