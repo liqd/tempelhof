@@ -9,7 +9,7 @@ import wagtail.wagtailcore.blocks
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0001_initial'),
+        ('home', '0002_create_homepage'),
     ]
 
     operations = [
