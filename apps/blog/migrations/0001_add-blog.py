@@ -9,6 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('wagtailcore', '0032_add_bulk_delete_page_permission'),
+        ('images', '__first__'),
     ]
 
     operations = [

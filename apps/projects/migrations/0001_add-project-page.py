@@ -10,6 +10,7 @@ class Migration(migrations.Migration):
     dependencies = [
         ('wagtailcore', '0032_add_bulk_delete_page_permission'),
         ('wagtailimages', '0018_remove_rendition_filter'),
+        ('images', '__first__'),
     ]
 
     operations = [
