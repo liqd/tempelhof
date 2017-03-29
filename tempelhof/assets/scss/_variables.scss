@@ -30,6 +30,9 @@ $font-size-xs: 0.64rem;
 
 $transition-duration: 0.2s;
 
+$hero-height: 41em;
+$hero-height-mobile: 25em;
+
 $breakpoint: 50em;
 
 @include grid-set('gutter', $padding);
