@@ -4,7 +4,7 @@ from wagtail.wagtailcore.blocks import FieldBlock
 icons = [
     {'classname': 'fa-archive', 'name': 'Archive'},
     {'classname': 'fa-file', 'name': 'Document'},
-    {'classname': 'fa-user', 'name': 'Participation'},
+    {'classname': 'fa-users', 'name': 'Participation'},
     {'classname': 'fa-download', 'name': 'Download'},
     {'classname': 'fa-book', 'name': 'Book'},
     {'classname': 'section', 'name': 'Paragraph'},
