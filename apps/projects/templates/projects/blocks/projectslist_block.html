@@ -8,7 +8,9 @@
                     {% image project.image fill-270x270 as img %}
                     <div class="projects-block__img-wrapper">
                         <img src="{{ img.url }}" alt="{{ img.alt }}" class="projects-block__img">
-                        <p class="img-author">&copy; {{ project.image.author }}</p>
+                        {% if project.image.author %}
+                            <p class="img-author">&copy; {{ project.image.author }}</p>
+                        {% endif %}
                     </div>
                     <div class="projects-block__body">
                         <p class="projects-block__date">{{ project.start_date }} &ndash; {{ project.end_date }}</p>
