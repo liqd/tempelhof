@@ -17,11 +17,10 @@
     </div>
     <div class="l-wrapper">
         <div class="l-center-6">
-            <p>{{ self.description }}</p>
-            <a href="{{ self.link }}">
-                <i class="fa fa-share" aria-hidden="true"></i>
-                {% trans 'go to project' %}
-            </a>
+            {{ self.description | richtext }}
+        </div>
+        <div class="l-center-8">
+            {{ self.embed_code | safe }}
         </div>
     </div>
 {% endblock %}

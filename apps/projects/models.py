@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from wagtail.wagtailadmin import edit_handlers
+from wagtail.wagtailcore import fields
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
@@ -29,15 +30,18 @@ class ProjectPage(Page):
     start_date = models.DateField()
     end_date = models.DateField()
 
-    description = models.CharField(max_length=256)
-    link = models.URLField()
+    short_description = models.CharField(max_length=112,
+                                         help_text='Shown in list.')
+    description = fields.RichTextField()
+    embed_code = models.TextField()
 
     content_panels = Page.content_panels + [
+        edit_handlers.FieldPanel('short_description'),
         edit_handlers.FieldPanel('description'),
         ImageChooserPanel('image'),
         edit_handlers.FieldPanel('start_date'),
         edit_handlers.FieldPanel('end_date'),
-        edit_handlers.FieldPanel('link'),
+        edit_handlers.FieldPanel('embed_code'),
     ]
 
     class Meta:
