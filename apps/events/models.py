@@ -28,9 +28,9 @@ class EventPage(Page):
     place = models.CharField(max_length=32)
     contact = models.EmailField()
 
-    short_description = models.CharField(max_length=56,
+    short_description = models.CharField(max_length=112,
                                          help_text='Shown on the homepage.')
-    description = RichTextField(max_length=512)
+    description = RichTextField()
 
     content_panels = Page.content_panels + [
         edit_handlers.MultiFieldPanel([
