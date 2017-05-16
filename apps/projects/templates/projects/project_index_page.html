@@ -12,7 +12,7 @@
     <div class="l-wrapper">
         <div class="l-center-8">
             {% for project in self.get_children.specific %}
-                <div class="projects-block__item">
+                <div class="projects-block__item projects-block__item--bordered">
                     {% image project.image fill-270x270 as img %}
                     <div class="projects-block__img-wrapper">
                         <img src="{{ img.url }}" alt="{{ img.alt }}" class="projects-block__img">

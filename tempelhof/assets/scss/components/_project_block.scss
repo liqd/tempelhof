@@ -19,6 +19,10 @@
     background: $body-bg;
 }
 
+.projects-block__item--bordered {
+    border: 1px solid $border-color;
+}
+
 .projects-block__body {
     padding: 1em;
     overflow: hidden;
