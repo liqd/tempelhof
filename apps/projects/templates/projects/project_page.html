@@ -10,7 +10,9 @@
         </div>
         <div class="page-header__img-wrapper">
             {% image self.image fill-1920x600 %}
-            <p class="img-author">&copy; {{ self.image.author }}</p>
+            {% if self.image.author %}
+                <p class="img-author">&copy; {{ self.image.author }}</p>
+            {% endif %}
         </div>
     </div>
     <div class="l-wrapper">

@@ -8,15 +8,11 @@ from wagtail.wagtailimages.models import Image
 
 
 class CustomImage(AbstractImage):
-    author = models.CharField(max_length=128, blank=True, default='THF')
+    author = models.CharField(max_length=128, blank=True)
 
     admin_form_fields = Image.admin_form_fields + (
         'author',
     )
-
-    def save(self, **kwargs):
-        self.author = self.author or 'THF'
-        super().save(**kwargs)
 
 
 class CustomRendition(AbstractRendition):
