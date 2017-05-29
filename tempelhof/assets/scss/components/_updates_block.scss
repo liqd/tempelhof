@@ -6,6 +6,7 @@
     padding: 0.75em 0.75em 0;
     border: 1px solid $border-color;
     border-radius: 0.5em;
+    margin-bottom: $spacer;
 
     @media (min-width: $breakpoint) {
         @include grid-span(4, 0, (gutter: 50px));
