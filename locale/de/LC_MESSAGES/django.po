@@ -70,11 +70,6 @@ msgstr "Wo"
 msgid "Contact"
 msgstr "Kontakt"
 
-#: apps/home/templates/home/includes/footer.html:6
-#: apps/home/templates/home/includes/header.html:18
-msgid "Senate Department for the Environment, Transport and Climate Protection"
-msgstr "Senatsverwaltung für Umwelt, Verkehr und Klimaschutz"
-
 #: apps/home/templates/home/includes/header.html:8
 msgid "Menu"
 msgstr "Menü"
