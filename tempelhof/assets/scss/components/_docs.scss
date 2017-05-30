@@ -12,6 +12,7 @@
     padding: $padding / 2;
     color: inherit;
     background-color: $bg-secondary;
+    padding-right: 1em;
 
     h2 {
         font-size: $font-size-lg;
@@ -36,5 +37,9 @@
         list-style: none;
         margin: 0;
         padding: 0;
+    }
+
+    li {
+        margin-bottom: 0.2em;
     }
 }

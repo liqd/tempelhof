@@ -1,9 +1,13 @@
 .calendar-list {
-    @include grid-span(4, 3, (columns: 7, gutter: 30px));
     padding: 0;
     border-bottom: 1px solid $border-color;
+    margin-bottom: $spacer;
 
     list-style: none;
+
+    @media (min-width: $breakpoint) {
+        @include grid-span(4, 3, (columns: 7, gutter: 30px));
+    }
 }
 
 .calendar-list__item {

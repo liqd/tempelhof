@@ -33,6 +33,10 @@
     margin: 0;
     @include clearfix;
 
+    // make sure this is not covered by .header__branding
+    position: relative;
+    z-index: 2;
+
     @media (max-width: $breakpoint) {
         display: none;
 
@@ -75,7 +79,6 @@
     z-index: 1;
 
     color: contrast-color($body-bg, $berlin-primary);
-    font-size: $font-size-sm;
     text-align: right;
 
     img {

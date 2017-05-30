@@ -1,9 +1,21 @@
 .blog-entry {
     border-bottom: 1px solid $border-color;
-    padding: $spacer 0;
+    padding: ($spacer * 1.5) 0;
 
     &:last-of-type {
         border-bottom: 0;
+    }
+
+    .rich-text {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: bold;
+        }
     }
 }
 
