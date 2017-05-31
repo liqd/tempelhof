@@ -43,3 +43,9 @@
         margin-bottom: 0.2em;
     }
 }
+
+.docs-block__body a[href^="/documents"]:before {
+    content: '\f016';
+    font-family: 'FontAwesome';
+    margin-right: 0.3em;
+}
