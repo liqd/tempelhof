@@ -1,4 +1,4 @@
-{% load wagtailimages_tags %}
+{% load wagtailimages_tags wagtailcore_tags %}
 
 <div class="docs-block">
     <a
@@ -27,17 +27,8 @@
                 </a>
             {% endfor %}
         {% endif %}
-        {% if value.documents %}
-            <ul>
-                {% for doc in value.documents %}
-                    <li>
-                        <a href="{{ doc.url }}">
-                            <i class="fa fa-file-o" aria-hidden="true"></i>
-                            {{ doc.title }}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
+        {% if value.body %}
+            {{ value.body|richtext }}
         {% endif %}
     </div>
 </div>
