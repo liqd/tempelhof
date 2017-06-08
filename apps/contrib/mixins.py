@@ -6,7 +6,7 @@ class PaginatorMixin:
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        objects = self.get_children().live().specific()
+        objects = self.get_ordered_children()
         paginator_obj = paginator.Paginator(objects, self.objects_per_page)
         page_number = request.GET.get('p', 1)
 
@@ -22,3 +22,6 @@ class PaginatorMixin:
         })
 
         return context
+
+    def get_ordered_children(self):
+        return self.get_children().live().specific()
