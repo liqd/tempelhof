@@ -10,7 +10,7 @@ from apps.contrib.mixins import PaginatorMixin
 class CalendarPage(PaginatorMixin, Page):
     objects_per_page = 12
 
-    def get_children(self):
+    def get_ordered_children(self):
         return EventPage.objects.descendant_of(self).order_by('date')
 
     class Meta:
