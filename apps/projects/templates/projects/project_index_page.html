@@ -11,22 +11,21 @@
     </div>
     <div class="l-wrapper">
         <div class="l-center-8">
-            {% for project in self.get_children.specific %}
+            {% for container in self.get_children.specific %}
                 <div class="projects-block__item projects-block__item--bordered">
-                    {% image project.image fill-270x270 as img %}
+                    {% image container.image fill-270x270 as img %}
                     <div class="projects-block__img-wrapper">
                         <img src="{{ img.url }}" alt="{{ img.alt }}" class="projects-block__img">
-                        {% if project.image.author %}
-                            <p class="img-author">&copy; {{ project.image.author }}</p>
+                        {% if container.image.author %}
+                            <p class="img-author">&copy; {{ container.image.author }}</p>
                         {% endif %}
                     </div>
                     <div class="projects-block__body">
-                        <p class="projects-block__date">{{ project.start_date }} &ndash; {{ project.end_date }}</p>
-                        <h3 class="projects-block__heading" id="project-{{ forloop.counter }}">{{ project.title }}</h3>
-                        <p>{{ project.short_description }}</p>
-                        <a href="{% pageurl project %}"
+                        <h3 class="projects-block__heading" id="project-{{ forloop.counter }}">{{ container.title }}</h3>
+                        <p>{{ container.short_description }}</p>
+                        <a href="{% pageurl container %}"
                            aria-describedby="project-{{ forloop.counter }}">
-                            <i class="fa fa-share" aria-hidden="true"></i> {% trans 'go to project' %}
+                            <i class="fa fa-share" aria-hidden="true"></i> {% trans 'go to project container' %}
                         </a>
                     </div>
                 </div>
