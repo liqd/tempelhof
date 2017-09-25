@@ -9,7 +9,6 @@
     "block-opening-brace-newline-after": "always",
 
     "selector-attribute-quotes": "always",
-    "selector-no-id": true,
     "selector-no-vendor-prefix": true,
     "selector-pseudo-element-colon-notation": "single",
     "no-duplicate-selectors": true,
