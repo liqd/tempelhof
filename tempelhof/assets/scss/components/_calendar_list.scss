@@ -12,7 +12,9 @@
 
 .calendar-list__item {
     padding: 1.3em 1em 0;
+
     @include clearfix;
+
     display: none;
 
     &.is-active {
