@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-26 06:57+0000\n"
+"POT-Creation-Date: 2017-09-26 13:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,9 +80,15 @@ msgstr "Menü"
 msgid "Project Containers"
 msgstr "Vorhaben"
 
+#: apps/projects/models.py:31 apps/projects/models.py:64
+msgid "Shown in list."
+msgstr "In Liste anzeigen"
+
 #: apps/projects/models.py:41
-msgid "Projects"
-msgstr "Projekte"
+#, fuzzy
+#| msgid "Projects"
+msgid "Project Container"
+msgstr "Vorhaben"
 
 #: apps/projects/models.py:78
 msgid "Project"
