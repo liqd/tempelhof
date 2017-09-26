@@ -8,10 +8,40 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
 class ProjectIndexPage(Page):
     class Meta:
-        verbose_name = _('Projects')
+        verbose_name = _('Project Containers')
 
     parent_page_types = [
         'home.HomePage'
+    ]
+    subpage_types = [
+        'ProjectContainerPage'
+    ]
+
+
+class ProjectContainerPage(Page):
+    image = models.ForeignKey(
+        'images.CustomImage',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
+    short_description = models.CharField(max_length=112,
+                                         help_text=_('Shown in list.'))
+    description = fields.RichTextField()
+
+    content_panels = Page.content_panels + [
+        edit_handlers.FieldPanel('short_description'),
+        edit_handlers.FieldPanel('description'),
+        ImageChooserPanel('image'),
+    ]
+
+    class Meta:
+        verbose_name = _('Project Container')
+
+    parent_page_types = [
+        'ProjectIndexPage'
     ]
     subpage_types = [
         'ProjectPage'
@@ -31,7 +61,7 @@ class ProjectPage(Page):
     end_date = models.DateField()
 
     short_description = models.CharField(max_length=112,
-                                         help_text='Shown in list.')
+                                         help_text=_('Shown in list.'))
     description = fields.RichTextField()
     embed_code = models.TextField()
 
@@ -48,6 +78,6 @@ class ProjectPage(Page):
         verbose_name = _('Project')
 
     parent_page_types = [
-        'ProjectIndexPage'
+        'ProjectContainerPage'
     ]
     subpage_types = []

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-22 09:41+0000\n"
+"POT-Creation-Date: 2017-09-26 13:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,11 +46,11 @@ msgstr "Nächste Seite"
 msgid "Documents"
 msgstr "Dokumente"
 
-#: apps/events/models.py:14
+#: apps/events/models.py:17
 msgid "Calendar"
 msgstr "Kalender"
 
-#: apps/events/models.py:55
+#: apps/events/models.py:58
 msgid "Event"
 msgstr "Termin"
 
@@ -70,18 +70,37 @@ msgstr "Wo"
 msgid "Contact"
 msgstr "Kontakt"
 
-#: apps/home/templates/home/includes/header.html:8
+#: apps/home/templates/home/includes/header.html:11
 msgid "Menu"
 msgstr "Menü"
 
-#: apps/projects/models.py:10
-msgid "Projects"
-msgstr "Projekte"
+#: apps/projects/models.py:11
+#, fuzzy
+#| msgid "Projects"
+msgid "Project Containers"
+msgstr "Vorhaben"
 
-#: apps/projects/models.py:44
+#: apps/projects/models.py:31 apps/projects/models.py:64
+msgid "Shown in list."
+msgstr "In Liste anzeigen"
+
+#: apps/projects/models.py:41
+#, fuzzy
+#| msgid "Projects"
+msgid "Project Container"
+msgstr "Vorhaben"
+
+#: apps/projects/models.py:78
 msgid "Project"
 msgstr "Projekt"
 
-#: apps/projects/templates/projects/blocks/projectslist_block.html:19
+#: apps/projects/templates/projects/blocks/projectslist_block.html:21
+#: apps/projects/templates/projects/project_container_page.html:38
 msgid "go to project"
 msgstr "Zum Projekt"
+
+#: apps/projects/templates/projects/project_index_page.html:28
+#, fuzzy
+#| msgid "go to project"
+msgid "go to project container"
+msgstr "Zu den Vorhaben"
