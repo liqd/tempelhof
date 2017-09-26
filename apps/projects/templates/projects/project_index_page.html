@@ -21,7 +21,7 @@
                         {% endif %}
                     </div>
                     <div class="projects-block__body">
-                        <h3 class="projects-block__heading" id="project-{{ forloop.counter }}">{{ container.title }}</h3>
+                        <h3 class="projects-block__heading u-first-heading" id="project-{{ forloop.counter }}">{{ container.title }}</h3>
                         <p>{{ container.short_description }}</p>
                         <a href="{% pageurl container %}"
                            aria-describedby="project-{{ forloop.counter }}">
