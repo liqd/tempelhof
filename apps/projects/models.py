@@ -38,7 +38,7 @@ class ProjectContainerPage(Page):
     ]
 
     class Meta:
-        verbose_name = _('Projects')
+        verbose_name = _('Project Container')
 
     parent_page_types = [
         'ProjectIndexPage'
