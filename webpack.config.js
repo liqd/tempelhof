@@ -18,7 +18,7 @@ module.exports = {
   output: {
     libraryTarget: 'var',
     library: 'tempelhof',
-    path: './tempelhof/static/',
+    path: path.resolve('./tempelhof/static/'),
     publicPath: '/static/',
     filename: '[name].js'
   },
@@ -27,34 +27,54 @@ module.exports = {
   },
   module: {
     noParse: /\.min\.js$/,
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules\/(?!adhocracy4|bootstrap)/,  // exclude all dependencies but adhocracy4 and bootstrap
         loader: 'babel-loader',
-        query: {
+        options: {
           presets: ['babel-preset-es2015', 'babel-preset-react'].map(require.resolve)
         }
       },
       {
         test: /\.s?css$/,
-        loader: ExtractTextPlugin.extract('style?sourceMap', '!css?sourceMap!postcss?sourceMap!sass?sourceMap')
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: (loader) => [
+                  autoprefixer({
+                    browsers: ['last 3 versions', 'ie >= 10']
+                  })
+                ]
+              }
+            },
+            'sass-loader'
+          ]
+        })
       },
       {
         test: /fonts\/.*\.(svg|woff2?|ttf|eot)(\?.*)?$/,
-        loader: 'file-loader?name=fonts/[name].[ext]'
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]'
+        }
       },
       {
         test: /\.svg$|\.png$/,
-        loader: 'file-loader?name=images/[name].[ext]'
+        loader: 'file-loader',
+        options: {
+          name: 'images/[name].[ext]'
+        }
       }
     ]
   },
-  postcss: [
-    autoprefixer({browsers: ['last 3 versions', 'ie >= 10']})
-  ],
   resolve: {
-    extensions: ['', '.js', '.jsx', '.scss', '.css'],
+    extensions: ['*', '.js', '.jsx', '.scss', '.css'],
     alias: {
       'jquery$': 'jquery/dist/jquery.min.js'
     },
@@ -62,14 +82,17 @@ module.exports = {
     // folder by default. This may result in dependencies being included twice.
     // Setting `resolve.root` forces webpack to resolve all dependencies
     // against the local directory.
-    root: [
+    modules: [
       path.resolve('./node_modules'),
       path.resolve('./apps/'),
     ]
   },
   plugins: [
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
-    new ExtractTextPlugin('[name].css')
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.js'
+    }),
+    new ExtractTextPlugin({filename: '[name].css'})
   ]
 }
