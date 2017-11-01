@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -75,8 +74,6 @@ msgid "Menu"
 msgstr "Menü"
 
 #: apps/projects/models.py:11
-#, fuzzy
-#| msgid "Projects"
 msgid "Project Containers"
 msgstr "Vorhaben"
 
@@ -85,8 +82,6 @@ msgid "Shown in list."
 msgstr "In Liste anzeigen"
 
 #: apps/projects/models.py:41
-#, fuzzy
-#| msgid "Projects"
 msgid "Project Container"
 msgstr "Vorhaben"
 
@@ -100,7 +95,5 @@ msgid "go to project"
 msgstr "Zum Projekt"
 
 #: apps/projects/templates/projects/project_index_page.html:28
-#, fuzzy
-#| msgid "go to project"
 msgid "go to project container"
 msgstr "Zu den Vorhaben"
