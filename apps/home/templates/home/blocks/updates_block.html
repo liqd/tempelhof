@@ -9,6 +9,6 @@
         {{ value.status.text|richtext }}
     </div>
     <div class="updates-block__calendar">
-        {{ value.bound_blocks.calendar }}
+        {% include_block value.calendar %}
     </div>
 </div>

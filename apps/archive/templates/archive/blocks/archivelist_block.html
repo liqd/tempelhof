@@ -1,5 +1,7 @@
+{% load wagtailcore_tags %}
+
 <div class="archive-list">
     {% for archive in value.archives %}
-        {{ archive }}
+        {% include_block archive %}
     {% endfor %}
 </div>
