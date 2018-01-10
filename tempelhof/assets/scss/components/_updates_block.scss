@@ -9,7 +9,7 @@
     margin-bottom: $spacer;
 
     @media (min-width: $breakpoint) {
-        @include grid-span(4, 0, (gutter: 50px));
+        @include grid-span(8, 0, (gutter: 50px));
     }
 
     time {
@@ -23,6 +23,6 @@
 
 .updates-block__calendar {
     @media (min-width: $breakpoint) {
-        @include grid-span(8, 4, (gutter: 50px));
+        @include grid-span(4, 8, (gutter: 50px));
     }
 }

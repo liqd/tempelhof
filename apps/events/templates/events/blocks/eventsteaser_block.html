@@ -1,7 +1,8 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags event_tags %}
+
+{% get_upcoming_events as events %}
 
 {{ value.title }}
-<div id="calendar" class="calendar"></div>
 <ul class="calendar-list">
     {% for event in events|dictsort:'date' %}
         <li class="calendar-list__item" data-date="{{ event.date|date:'Y-n-d' }}">
@@ -13,7 +14,9 @@
             </div>
         </li>
     {% endfor %}
+    {% if value.calendar_link and value.calendar_link_text %}
+        <li class="calendar-list__item">
+            <h2 class="calendar-list__link"><a href="{% pageurl value.calendar_link %}">{{ value.calendar_link_text }}</a></h2>
+        </li>
+    {% endif %}
 </ul>
-<script>
-    var eventsData = {{ js_data|safe }}
-</script>

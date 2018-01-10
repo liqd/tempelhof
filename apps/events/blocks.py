@@ -6,7 +6,7 @@ from wagtail.wagtailcore import blocks
 from apps.events.models import EventPage
 
 
-class EventsTeaserBlock(blocks.StructBlock):
+class EventsTeaserCalendarBlock(blocks.StructBlock):
     heading = blocks.CharBlock(required=False)
 
     def get_context(self, value, parent_context=None):
@@ -21,6 +21,18 @@ class EventsTeaserBlock(blocks.StructBlock):
         })
 
         return context
+
+    class Meta:
+        template = 'events/blocks/eventsteaser_calendar_block.html'
+
+
+class EventsTeaserBlock(blocks.StructBlock):
+    heading = blocks.CharBlock(required=False)
+    calendar_link_text = blocks.CharBlock(required=False)
+    calendar_link = blocks.PageChooserBlock(
+        required=False,
+        target_model='events.CalendarPage'
+    )
 
     class Meta:
         template = 'events/blocks/eventsteaser_block.html'
