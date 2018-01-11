@@ -1,17 +1,14 @@
+import json
+
+from django.core.serializers.json import DjangoJSONEncoder
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from wagtail.wagtailadmin import edit_handlers
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailcore.models import Page
 
-from apps.contrib.mixins import PaginatorMixin
 
-
-class CalendarPage(PaginatorMixin, Page):
-    objects_per_page = 12
-
-    def get_ordered_children(self):
-        return EventPage.objects.descendant_of(self).order_by('date')
+class CalendarPage(Page):
 
     class Meta:
         verbose_name = _('Calendar')
@@ -22,6 +19,19 @@ class CalendarPage(PaginatorMixin, Page):
     subpage_types = [
         'events.EventPage'
     ]
+
+    def get_context(self, value, parent_context=None):
+        context = super().get_context(value, parent_context=parent_context)
+        events = EventPage.objects.live().descendant_of(self)
+        js_events = events.values('date', 'title', 'short_description')
+        js_data = json.dumps(list(js_events), cls=DjangoJSONEncoder)
+
+        context.update({
+            'events': events,
+            'js_data': js_data
+        })
+
+        return context
 
 
 class EventPage(Page):

@@ -11,21 +11,22 @@
     </div>
     <div class="l-wrapper">
         <div class="l-center-8">
-            <ul class="u-list-unstyled">
-                {% for event in paginator_page.object_list.reverse %}
-                    <li class="calendar-entry">
-                        <time
-                            class="calendar-entry__date"
-                            datetime="{{ event.date|date:'Y-m-d' }}"
-                        >{{ event.date|date:"SHORT_DATE_FORMAT" }}</time>
-                        <h2 class="calendar-entry__title">
-                            <a href="{% pageurl event %}">{{ event.title }}</a>
-                        </h2>
-                        <p class="calendar-entry__description">{{ event.short_description }}</p>
+            <div id="calendar" class="calendar"></div>
+            <ul class="calendar-list calendar-list--calendar">
+                {% for event in events|dictsort:'date' %}
+                    <li class="calendar-list__item calendar-list__item--calendar" data-date="{{ event.date|date:'Y-n-d' }}">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <div class="calendar-list__body">
+                            <h2 class="calendar-list__title"><a href="{% pageurl event %}">{{ event.title }}</a></h2>
+                            <h3 class="calendar-list__date">{{ event.date }}</h3>
+                            <p>{{ event.short_description }}</p>
+                        </div>
                     </li>
                 {% endfor %}
             </ul>
-            {% include 'contrib/includes/pagination.html' with page=paginator_page %}
+            <script>
+                var eventsData = {{ js_data|safe }}
+            </script>
         </div>
     </div>
 {% endblock %}
