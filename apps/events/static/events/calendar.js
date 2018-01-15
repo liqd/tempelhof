@@ -44,9 +44,9 @@ if (calendar) {
   })
 
   function getSelectorString (instance, day = '') {
-    let date = instance.currentYear + '-' + (instance.currentMonth + 1)
+    let date = instance.currentYear + '-' + (instance.currentMonth + 1) + '-'
     if (day) {
-      date += '-' + day
+      date += day
     }
     return selectorPattern.replace('{}', date)
   }
