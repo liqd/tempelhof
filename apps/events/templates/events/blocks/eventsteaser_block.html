@@ -1,10 +1,8 @@
-{% load wagtailcore_tags event_tags %}
-
-{% get_upcoming_events as events %}
+{% load wagtailcore_tags %}
 
 {{ value.title }}
 <ul class="calendar-list">
-    {% for event in events|dictsort:'date' %}
+    {% for event in events %}
         <li class="calendar-list__item" data-date="{{ event.date|date:'Y-n-d' }}">
             <i class="fa fa-calendar" aria-hidden="true"></i>
             <div class="calendar-list__body">
