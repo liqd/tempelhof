@@ -1,17 +1,17 @@
+import json
+
+from django.core import paginator
+from django.core.serializers.json import DjangoJSONEncoder
 from django.db import models
+from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 from wagtail.wagtailadmin import edit_handlers
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailcore.models import Page
 
-from apps.contrib.mixins import PaginatorMixin
 
-
-class CalendarPage(PaginatorMixin, Page):
+class CalendarPage(Page):
     objects_per_page = 12
-
-    def get_ordered_children(self):
-        return EventPage.objects.descendant_of(self).order_by('date')
 
     class Meta:
         verbose_name = _('Calendar')
@@ -22,6 +22,41 @@ class CalendarPage(PaginatorMixin, Page):
     subpage_types = [
         'events.EventPage'
     ]
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+
+        events = EventPage.objects.live().descendant_of(self)
+        js_events = events.values('date', 'title', 'short_description')
+        js_data = json.dumps(list(js_events), cls=DjangoJSONEncoder)
+
+        dates = request.GET.get('dates', 'upcoming')
+
+        if dates == 'upcoming':
+            events = events.filter(date__gte=timezone.now())
+        elif dates == 'past':
+            events = events.filter(date__lt=timezone.now())
+
+        events = events.order_by('date', 'time_start')
+
+        paginator_obj = paginator.Paginator(events, self.objects_per_page)
+        page_number = request.GET.get('p', 1)
+
+        try:
+            page = paginator_obj.page(page_number)
+        except paginator.PageNotAnInteger:
+            page = paginator_obj.page(1)
+        except paginator.EmptyPage:
+            page = paginator_obj.page(paginator_obj.num_pages)
+
+        context.update({
+            'js_data': js_data,
+            'js_events': EventPage.objects.live().descendant_of(self),
+            'events': events,
+            'paginator_page': page,
+        })
+
+        return context
 
 
 class EventPage(Page):

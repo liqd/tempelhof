@@ -4,27 +4,21 @@
     margin-bottom: $spacer;
 
     list-style: none;
+}
 
+.calendar-list--calendar {
     @media (min-width: $breakpoint) {
         @include grid-span(4, 3, (columns: 7, gutter: 30px));
     }
 }
 
 .calendar-list__item {
-    padding: 1.3em 1em 0;
+    padding: 1.3em 1em;
 
     @include clearfix;
 
-    display: none;
-
-    &.is-active {
-        display: block;
-        border-top: 1px solid $border-color;
-    }
-
-    &.is-highlighted {
-        background-color: $brand-secondary;
-    }
+    display: block;
+    border-top: 1px solid $border-color;
 
     i {
         margin-top: 0.5em;
@@ -32,6 +26,22 @@
 
         font-size: 2.5rem;
         color: $text-secondary;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.calendar-list__item--calendar {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+
+    &.is-highlighted {
+        background-color: $brand-secondary;
     }
 }
 
@@ -51,4 +61,11 @@
     margin: 0.5em 0 0.25em;
 
     @include secondary_text;
+}
+
+.calendar-list__link {
+    margin: 0;
+
+    font-size: $font-size-lg;
+    font-weight: bold;
 }
