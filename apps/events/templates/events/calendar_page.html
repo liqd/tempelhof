@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags i18n %}
 
 {% block content %}
     <div class="page-header">
@@ -13,7 +13,7 @@
         <div class="l-center-8">
             <div id="calendar" class="calendar"></div>
             <ul class="calendar-list calendar-list--calendar">
-                {% for event in events|dictsort:'date' %}
+                {% for event in js_events|dictsort:'date' %}
                     <li class="calendar-list__item calendar-list__item--calendar" data-date="{{ event.date|date:'Y-n-d' }}">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
                         <div class="calendar-list__body">
@@ -27,6 +27,28 @@
             <script>
                 var eventsData = {{ js_data|safe }}
             </script>
+        </div>
+    </div>
+    <div class="l-wrapper">
+        <div class="l-center-8">
+            <a href="?dates=upcoming" class="filter__link" aria-label="{% trans 'Filter for upcoming dates' %}">{% trans "Upcoming" %}</a>
+            <a href="?dates=past" class="filter__link" aria-label="{% trans 'Filter for past dates' %}">{% trans "Past" %}</a>
+            <a href="?dates=all"  class="filter__link" aria-label="{% trans 'Filter for all dates' %}">{% trans "All" %}</a>
+            <ul class="u-list-unstyled">
+                {% for event in paginator_page.object_list %}
+                    <li class="calendar-entry">
+                        <time
+                            class="calendar-entry__date"
+                            datetime="{{ event.date|date:'Y-m-d' }}"
+                        >{{ event.date|date:"SHORT_DATE_FORMAT" }}</time>
+                        <h2 class="calendar-entry__title">
+                            <a href="{% pageurl event %}">{{ event.title }}</a>
+                        </h2>
+                        <p class="calendar-entry__description">{{ event.short_description }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+            {% include 'contrib/includes/pagination.html' with page=paginator_page %}
         </div>
     </div>
 {% endblock %}
