@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-26 13:48+0000\n"
+"POT-Creation-Date: 2018-01-17 12:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,15 +29,15 @@ msgstr "Blog"
 msgid "Blog Entry"
 msgstr "Blog Eintrag"
 
-#: apps/contrib/templates/contrib/includes/pagination.html:3
+#: apps/contrib/templates/contrib/includes/pagination.html:4
 msgid "Pagination"
 msgstr ""
 
-#: apps/contrib/templates/contrib/includes/pagination.html:8
+#: apps/contrib/templates/contrib/includes/pagination.html:10
 msgid "Previous page"
 msgstr "Vorherige Seite"
 
-#: apps/contrib/templates/contrib/includes/pagination.html:26
+#: apps/contrib/templates/contrib/includes/pagination.html:29
 msgid "Next page"
 msgstr "Nächste Seite"
 
@@ -49,9 +49,33 @@ msgstr "Dokumente"
 msgid "Calendar"
 msgstr "Kalender"
 
-#: apps/events/models.py:58
+#: apps/events/models.py:93
 msgid "Event"
 msgstr "Termin"
+
+#: apps/events/templates/events/calendar_page.html:34
+msgid "Filter for upcoming dates"
+msgstr "Filter für anstehende Termine"
+
+#: apps/events/templates/events/calendar_page.html:34
+msgid "Upcoming"
+msgstr "Anstehend"
+
+#: apps/events/templates/events/calendar_page.html:35
+msgid "Filter for past dates"
+msgstr "Filter für vergangene Termine"
+
+#: apps/events/templates/events/calendar_page.html:35
+msgid "Past"
+msgstr "Beendet"
+
+#: apps/events/templates/events/calendar_page.html:36
+msgid "Filter for all dates"
+msgstr "Filter für alle Termine"
+
+#: apps/events/templates/events/calendar_page.html:36
+msgid "All"
+msgstr "Alle"
 
 #: apps/events/templates/events/event_page.html:16
 msgid "Back to index"
