@@ -1,5 +1,7 @@
 {% load wagtailcore_tags %}
 
+{% if events %}
+
 {{ value.title }}
 <ul class="calendar-list">
     {% for event in events %}
@@ -18,3 +20,5 @@
         </li>
     {% endif %}
 </ul>
+
+{% endif %}
