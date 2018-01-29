@@ -1,8 +1,6 @@
 {% load wagtailcore_tags %}
 
 {% if events %}
-
-{{ value.title }}
 <ul class="calendar-list">
     {% for event in events %}
         <li class="calendar-list__item" data-date="{{ event.date|date:'Y-n-d' }}">
