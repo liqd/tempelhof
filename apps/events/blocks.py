@@ -5,7 +5,6 @@ from apps.events.models import EventPage
 
 
 class EventsTeaserBlock(blocks.StructBlock):
-    heading = blocks.CharBlock(required=False)
     calendar_link_text = blocks.CharBlock(required=False)
     calendar_link = blocks.PageChooserBlock(
         required=False,
