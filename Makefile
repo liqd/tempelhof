@@ -1,8 +1,5 @@
-VIRTUAL_ENV ?= .env
+VIRTUAL_ENV ?= env
 NODE_BIN = node_modules/.bin
-SCSS_FILES := $(shell find 'tempelhof/assets/scss' -name '*.scss')
-JS_FILES := $(shell find 'tempelhof/assets/js' | grep '\.jsx\?$$')
-PO_FILES := $(shell find . -name '*.po')
 
 install:
 	npm install
@@ -10,19 +7,21 @@ install:
 	$(VIRTUAL_ENV)/bin/python3 -m pip install -r requirements/dev.txt
 	$(VIRTUAL_ENV)/bin/python3 manage.py migrate
 
-webpack: $(SCSS_FILES) $(JS_FILES)
-	$(NODE_BIN)/webpack
-
-webpack-prod: $(SCSS_FILES) $(JS_FILES)
-	$(NODE_BIN)/webpack --define process.env.NODE_ENV="'production'" --optimize-minimize --devtool none
-
 makemessages:
 	$(VIRTUAL_ENV)/bin/python manage.py makemessages -l de
 
-compilemessages: $(PO_FILES)
-	$(VIRTUAL_ENV)/bin/python manage.py compilemessages
-
-build: webpack compilemessages
-
 server:
-	$(VIRTUAL_ENV)/bin/python3 manage.py runserver 8000
+	$(VIRTUAL_ENV)/bin/python3 manage.py runserver 8007
+
+.PHONY: lint-quick
+lint-quick:
+	. $(VIRTUAL_ENV)/bin/activate && $(NODE_BIN)/polylint -SF
+
+.PHONY: release
+release:
+	npm install --silent
+	npm run build
+	$(VIRTUAL_ENV)/bin/python3 -m pip install -r requirements.txt -q
+	$(VIRTUAL_ENV)/bin/python3 manage.py compilemessages -v0
+	$(VIRTUAL_ENV)/bin/python3 manage.py collectstatic --noinput -v0
+

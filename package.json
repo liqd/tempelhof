@@ -33,6 +33,8 @@
     "stylelint-declaration-strict-value": "^1.0.3"
   },
   "scripts": {
-    "precommit": ". .env/bin/activate && polylint -SF"
+    "build": "webpack --define process.env.NODE_ENV='production' --optimize-minimize --devtool none",
+    "build:dev": "webpack",
+    "precommit": "make lint-quick"
   }
 }
