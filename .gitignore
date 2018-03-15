@@ -7,6 +7,6 @@ tempelhof/static/*.js
 tempelhof/static/fonts
 tempelhof/static/images/Roboto*
 media/
-/env/
-/static/
+venv/
+static/
 .idea/
