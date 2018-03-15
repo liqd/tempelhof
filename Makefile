@@ -18,6 +18,7 @@ lint-quick:
 	. $(VIRTUAL_ENV)/bin/activate && $(NODE_BIN)/polylint -SF
 
 .PHONY: release
+release: export DJANGO_SETTINGS_MODULE ?= tempelhof.settings.build
 release:
 	npm install --silent
 	npm run build
