@@ -1,4 +1,2 @@
 -r base.txt
-whitenoise==3.3.1
-brotli==1.0.1
 psycopg2-binary==2.7.4
