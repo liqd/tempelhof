@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from wagtail.wagtailadmin import edit_handlers
-from wagtail.wagtailcore import fields
-from wagtail.wagtailcore.models import Page
+from wagtail.admin import edit_handlers
+from wagtail.core import fields
+from wagtail.core.models import Page
 
 from .blocks import DocsBlock
 

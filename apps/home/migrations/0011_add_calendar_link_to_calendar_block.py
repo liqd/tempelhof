@@ -5,8 +5,8 @@ from __future__ import unicode_literals
 import apps.home.blocks
 import apps.projects.blocks
 from django.db import migrations
-import wagtail.wagtailcore.blocks
-import wagtail.wagtailcore.fields
+import wagtail.core.blocks
+import wagtail.core.fields
 
 
 class Migration(migrations.Migration):
@@ -19,6 +19,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='homepage',
             name='body',
-            field=wagtail.wagtailcore.fields.StreamField((('text', wagtail.wagtailcore.blocks.RichTextBlock(icon='doc-full', template='home/blocks/text.html')), ('teasers', wagtail.wagtailcore.blocks.StructBlock((('teasers', wagtail.wagtailcore.blocks.ListBlock(apps.home.blocks.TeaserBlock)),))), ('columns', wagtail.wagtailcore.blocks.StructBlock((('columns', wagtail.wagtailcore.blocks.ListBlock(apps.home.blocks.ColumnBlock)),))), ('projects', wagtail.wagtailcore.blocks.StructBlock((('title', wagtail.wagtailcore.blocks.CharBlock()), ('projects', wagtail.wagtailcore.blocks.ListBlock(apps.projects.blocks.CurrentProjectBlock))))), ('updates', wagtail.wagtailcore.blocks.StructBlock((('status', wagtail.wagtailcore.blocks.PageChooserBlock(target_model=['blog.BlogEntryPage'])), ('calendar', wagtail.wagtailcore.blocks.StructBlock((('heading', wagtail.wagtailcore.blocks.CharBlock(required=False)), ('calendar_link_text', wagtail.wagtailcore.blocks.CharBlock(required=False)), ('calendar_link', wagtail.wagtailcore.blocks.PageChooserBlock(required=False, target_model=['events.CalendarPage'])))))))))),
+            field=wagtail.core.fields.StreamField((('text', wagtail.core.blocks.RichTextBlock(icon='doc-full', template='home/blocks/text.html')), ('teasers', wagtail.core.blocks.StructBlock((('teasers', wagtail.core.blocks.ListBlock(apps.home.blocks.TeaserBlock)),))), ('columns', wagtail.core.blocks.StructBlock((('columns', wagtail.core.blocks.ListBlock(apps.home.blocks.ColumnBlock)),))), ('projects', wagtail.core.blocks.StructBlock((('title', wagtail.core.blocks.CharBlock()), ('projects', wagtail.core.blocks.ListBlock(apps.projects.blocks.CurrentProjectBlock))))), ('updates', wagtail.core.blocks.StructBlock((('status', wagtail.core.blocks.PageChooserBlock(target_model=['blog.BlogEntryPage'])), ('calendar', wagtail.core.blocks.StructBlock((('heading', wagtail.core.blocks.CharBlock(required=False)), ('calendar_link_text', wagtail.core.blocks.CharBlock(required=False)), ('calendar_link', wagtail.core.blocks.PageChooserBlock(required=False, target_model=['events.CalendarPage'])))))))))),
         ),
     ]

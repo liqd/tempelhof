@@ -2,9 +2,9 @@
 from django.db import models
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
-from wagtail.wagtailimages.models import AbstractImage
-from wagtail.wagtailimages.models import AbstractRendition
-from wagtail.wagtailimages.models import Image
+from wagtail.images.models import AbstractImage
+from wagtail.images.models import AbstractRendition
+from wagtail.images.models import Image
 
 
 class CustomImage(AbstractImage):

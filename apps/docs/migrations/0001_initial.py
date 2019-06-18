@@ -2,9 +2,9 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import wagtail.wagtaildocs.blocks
-import wagtail.wagtailcore.blocks
-import wagtail.wagtailcore.fields
+import wagtail.documents.blocks
+import wagtail.core.blocks
+import wagtail.core.fields
 
 
 class Migration(migrations.Migration):
@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             name='DocsPage',
             fields=[
                 ('page_ptr', models.OneToOneField(serialize=False, auto_created=True, parent_link=True, to='wagtailcore.Page', primary_key=True)),
-                ('body', wagtail.wagtailcore.fields.StreamField((('documents_list', wagtail.wagtailcore.blocks.StructBlock((('title', wagtail.wagtailcore.blocks.CharBlock()), ('documents', wagtail.wagtailcore.blocks.ListBlock(wagtail.wagtaildocs.blocks.DocumentChooserBlock()))))),))),
+                ('body', wagtail.core.fields.StreamField((('documents_list', wagtail.core.blocks.StructBlock((('title', wagtail.core.blocks.CharBlock()), ('documents', wagtail.core.blocks.ListBlock(wagtail.documents.blocks.DocumentChooserBlock()))))),))),
                 ('description', models.CharField(max_length=200)),
             ],
             options={

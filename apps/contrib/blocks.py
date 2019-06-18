@@ -1,5 +1,5 @@
 from django.forms import ChoiceField
-from wagtail.wagtailcore.blocks import FieldBlock
+from wagtail.core.blocks import FieldBlock
 
 icons = [
     {'classname': 'fa-archive', 'name': 'Archive'},

@@ -1,5 +1,5 @@
-from wagtail.wagtailcore import blocks
-from wagtail.wagtaildocs.blocks import DocumentChooserBlock
+from wagtail.core import blocks
+from wagtail.documents.blocks import DocumentChooserBlock
 
 
 class LinkBlock(blocks.StructBlock):
