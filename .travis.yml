@@ -6,8 +6,6 @@ install:
   - nvm install 6
   - npm install --only=dev
   - pip install -r requirements/dev.txt
-script:
-  - ./node_modules/.bin/polylint -F
 deploy:
   - provider: script
     script: scripts/deploy.sh
