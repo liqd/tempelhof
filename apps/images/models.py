@@ -16,7 +16,9 @@ class CustomImage(AbstractImage):
 
 
 class CustomRendition(AbstractRendition):
-    image = models.ForeignKey(CustomImage, related_name='renditions')
+    image = models.ForeignKey(CustomImage,
+        on_delete=models.CASCADE,
+        related_name='renditions')
 
     class Meta:
         unique_together = (

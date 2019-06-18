@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ProjectContainerPage',
             fields=[
-                ('page_ptr', models.OneToOneField(primary_key=True, serialize=False, auto_created=True, parent_link=True, to='wagtailcore.Page')),
+                ('page_ptr', models.OneToOneField(primary_key=True, serialize=False, auto_created=True, parent_link=True, to='wagtailcore.Page', on_delete=models.CASCADE)),
                 ('short_description', models.CharField(max_length=112, help_text='Shown in list.')),
                 ('description', wagtail.core.fields.RichTextField()),
                 ('image', models.ForeignKey(blank=True, null=True, related_name='+', on_delete=django.db.models.deletion.SET_NULL, to='images.CustomImage')),

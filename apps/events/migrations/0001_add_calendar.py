@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='CalendarPage',
             fields=[
-                ('page_ptr', models.OneToOneField(auto_created=True, to='wagtailcore.Page', primary_key=True, parent_link=True, serialize=False)),
+                ('page_ptr', models.OneToOneField(auto_created=True, to='wagtailcore.Page', primary_key=True, parent_link=True, serialize=False, on_delete=models.CASCADE)),
             ],
             options={
                 'abstract': False,
@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='EventPage',
             fields=[
-                ('page_ptr', models.OneToOneField(auto_created=True, to='wagtailcore.Page', primary_key=True, parent_link=True, serialize=False)),
+                ('page_ptr', models.OneToOneField(auto_created=True, to='wagtailcore.Page', primary_key=True, parent_link=True, serialize=False, on_delete=models.CASCADE)),
                 ('date', models.DateField()),
                 ('time_start', models.TimeField()),
                 ('time_end', models.TimeField()),

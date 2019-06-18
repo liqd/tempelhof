@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='SimplePage',
             fields=[
-                ('page_ptr', models.OneToOneField(auto_created=True, primary_key=True, to='wagtailcore.Page', parent_link=True, serialize=False)),
+                ('page_ptr', models.OneToOneField(auto_created=True, primary_key=True, to='wagtailcore.Page', parent_link=True, serialize=False, on_delete=models.CASCADE)),
                 ('body', wagtail.core.fields.RichTextField(blank=True)),
             ],
             options={

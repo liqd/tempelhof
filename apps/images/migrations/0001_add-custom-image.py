@@ -34,7 +34,7 @@ class Migration(migrations.Migration):
                 ('focal_point_height', models.PositiveIntegerField(null=True, blank=True)),
                 ('file_size', models.PositiveIntegerField(null=True, editable=False)),
                 ('author', models.CharField(default='THF', max_length=128, blank=True)),
-                ('collection', models.ForeignKey(default=wagtail.core.models.get_root_collection_id, related_name='+', verbose_name='collection', to='wagtailcore.Collection')),
+                ('collection', models.ForeignKey(default=wagtail.core.models.get_root_collection_id, related_name='+', verbose_name='collection', to='wagtailcore.Collection', on_delete=models.CASCADE)),
                 ('tags', taggit.managers.TaggableManager(through='taggit.TaggedItem', blank=True, to='taggit.Tag', verbose_name='tags', help_text=None)),
                 ('uploaded_by_user', models.ForeignKey(null=True, blank=True, to=settings.AUTH_USER_MODEL, verbose_name='uploaded by user', on_delete=django.db.models.deletion.SET_NULL, editable=False)),
             ],
@@ -52,7 +52,7 @@ class Migration(migrations.Migration):
                 ('width', models.IntegerField(editable=False)),
                 ('height', models.IntegerField(editable=False)),
                 ('focal_point_key', models.CharField(default='', max_length=16, blank=True, editable=False)),
-                ('image', models.ForeignKey(to='images.CustomImage', related_name='renditions')),
+                ('image', models.ForeignKey(to='images.CustomImage', related_name='renditions', on_delete=models.CASCADE)),
             ],
         ),
         migrations.AlterUniqueTogether(

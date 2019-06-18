@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ProjectIndexPage',
             fields=[
-                ('page_ptr', models.OneToOneField(primary_key=True, serialize=False, to='wagtailcore.Page', parent_link=True, auto_created=True)),
+                ('page_ptr', models.OneToOneField(primary_key=True, serialize=False, to='wagtailcore.Page', parent_link=True, auto_created=True, on_delete=models.CASCADE)),
             ],
             options={
                 'abstract': False,
