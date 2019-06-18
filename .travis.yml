@@ -6,6 +6,8 @@ install:
   - nvm install 6
   - npm install --only=dev
   - pip install -r requirements/dev.txt
+script:
+  - python manage.py makemigrations --dry-run --check --noinput
 deploy:
   - provider: script
     script: scripts/deploy.sh
