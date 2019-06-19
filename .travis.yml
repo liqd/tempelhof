@@ -8,6 +8,8 @@ install:
   - pip install -r requirements/dev.txt
 script:
   - python manage.py makemigrations --dry-run --check --noinput
+  - isort --diff -rc -c apps tempelhof
+  - flake8 apps tempelhof --exclude migrations,settings
 deploy:
   - provider: script
     script: scripts/deploy.sh
