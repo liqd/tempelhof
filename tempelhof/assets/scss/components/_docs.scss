@@ -46,6 +46,6 @@
 
 .docs-block__body a[href^="/documents"]:before {
     content: '\f016';
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', sans-serif;
     margin-right: 0.3em;
 }
