@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ProjectPage',
             fields=[
-                ('page_ptr', models.OneToOneField(parent_link=True, primary_key=True, serialize=False, auto_created=True, to='wagtailcore.Page')),
+                ('page_ptr', models.OneToOneField(parent_link=True, primary_key=True, serialize=False, auto_created=True, to='wagtailcore.Page', on_delete=models.CASCADE)),
                 ('start_date', models.DateField()),
                 ('end_date', models.DateField()),
                 ('description', models.CharField(max_length=256)),

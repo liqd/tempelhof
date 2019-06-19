@@ -5,9 +5,9 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-from wagtail.wagtailadmin import edit_handlers
-from wagtail.wagtailcore.fields import RichTextField
-from wagtail.wagtailcore.models import Page
+from wagtail.admin import edit_handlers
+from wagtail.core.fields import RichTextField
+from wagtail.core.models import Page
 
 
 class CalendarPage(Page):

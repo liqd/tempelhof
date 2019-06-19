@@ -1,9 +1,9 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from wagtail.wagtailadmin import edit_handlers
-from wagtail.wagtailcore import fields
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailimages import edit_handlers as image_handlers
+from wagtail.admin import edit_handlers
+from wagtail.core import fields
+from wagtail.core.models import Page
+from wagtail.images import edit_handlers as image_handlers
 
 from .blocks import ArchiveListBlock
 

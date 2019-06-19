@@ -1,13 +1,13 @@
 from django.db import models
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
-from wagtail.wagtailadmin import edit_handlers
-from wagtail.wagtailcore import blocks
-from wagtail.wagtailcore import fields
-from wagtail.wagtailcore.models import Orderable
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
-from wagtail.wagtailsnippets.models import register_snippet
+from wagtail.admin import edit_handlers
+from wagtail.core import blocks
+from wagtail.core import fields
+from wagtail.core.models import Orderable
+from wagtail.core.models import Page
+from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.snippets.models import register_snippet
 
 from apps.home.blocks import ColumnsListBlock
 from apps.home.blocks import TeaserListBlock
@@ -60,7 +60,10 @@ class SimplePage(Page):
 
 class MenuItem(models.Model):
     title = models.CharField(max_length=255)
-    link_page = models.ForeignKey('wagtailcore.Page')
+    link_page = models.ForeignKey(
+        'wagtailcore.Page',
+        on_delete=models.CASCADE
+    )
 
     @property
     def url(self):

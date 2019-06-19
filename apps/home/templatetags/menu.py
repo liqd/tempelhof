@@ -5,7 +5,7 @@ from apps.home.models import NavigationMenu
 register = template.Library()
 
 
-@register.assignment_tag
+@register.simple_tag
 def get_menu(title):
     menu = NavigationMenu.objects.filter(title=title).first()
 
