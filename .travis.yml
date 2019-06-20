@@ -10,6 +10,7 @@ script:
   - python manage.py makemigrations --dry-run --check --noinput
   - isort --diff -rc -c apps tempelhof
   - flake8 apps tempelhof --exclude migrations,settings
+  - npm run lint
 deploy:
   - provider: script
     script: scripts/deploy.sh
