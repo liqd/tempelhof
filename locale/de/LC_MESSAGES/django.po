@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-17 12:10+0000\n"
+"POT-Creation-Date: 2019-06-21 09:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,9 +93,15 @@ msgstr "Wo"
 msgid "Contact"
 msgstr "Kontakt"
 
-#: apps/home/templates/home/includes/header.html:11
+#: apps/home/templates/home/includes/header.html:10
 msgid "Menu"
 msgstr "Menü"
+
+#: apps/projects/blocks.py:19
+msgid ""
+"Chose one or more Project Pages. Other pagetypes will result in an error."
+msgstr ""
+"Wählen Sie eine oder mehrere Projekt Siten. Andere Seitentypen werden einen Fehler verursachen."
 
 #: apps/projects/models.py:11
 msgid "Project Containers"
