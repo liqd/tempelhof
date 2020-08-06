@@ -39,7 +39,7 @@
     "watch": "webpack --config webpack.dev.js --watch --mode development",
     "lint": "stylelint 'tempelhof/assets/scss/**/*.scss' --syntax scss"
   },
-  "browserslist": "last 3 versions, ie >= 10",
+  "browserslist": "last 3 versions, ie >= 11",
   "husky": {
     "hooks": {
       "pre-commit": "make lint"
