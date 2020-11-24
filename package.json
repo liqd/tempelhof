@@ -30,7 +30,7 @@
     "husky": "4.3.0",
     "stylelint": "13.8.0",
     "stylelint-config-standard": "20.0.0",
-    "stylelint-declaration-strict-value": "1.6.1",
+    "stylelint-declaration-strict-value": "1.7.0",
     "webpack-cli": "3.3.12"
   },
   "scripts": {
