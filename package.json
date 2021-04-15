@@ -22,7 +22,7 @@
     "roboto-fontface": "0.10.0",
     "sass-loader": "9.0.3",
     "sass-planifolia": "0.6.0",
-    "terser-webpack-plugin": "4.2.3",
+    "terser-webpack-plugin": "5.1.1",
     "webpack": "5.33.2",
     "webpack-merge": "4.2.2"
   },
