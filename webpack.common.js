@@ -110,8 +110,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [{
         from: './tempelhof/assets/images/**/*',
-        to: 'images/',
-        flatten: true
+        to: 'images/[name].[ext]',
       }]
     })
   ]
