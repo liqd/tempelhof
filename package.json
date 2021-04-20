@@ -16,7 +16,7 @@
     "flatpickr": "4.6.9",
     "mini-css-extract-plugin": "1.5.0",
     "node-sass": "5.0.0",
-    "jquery": "3.5.1",
+    "jquery": "3.6.0",
     "jquery-colorbox": "1.6.4",
     "postcss-loader": "5.2.0",
     "roboto-fontface": "0.10.0",
