@@ -111,6 +111,7 @@ module.exports = {
       patterns: [{
         from: './tempelhof/assets/images/**/*',
         to: 'images/',
+        flatten: true
       }]
     })
   ]
