@@ -22,8 +22,7 @@ module.exports = {
     libraryTarget: 'this',
     library: '[name]',
     path: path.resolve('./tempelhof/static/'),
-    publicPath: '/static/',
-    filename: '[name].js'
+    publicPath: '/static/'
   },
   externals: {
     'django': 'django'
@@ -46,7 +45,10 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
+            options: {
+              url: false
+            },
           },
           {
             loader: 'postcss-loader',
@@ -81,6 +83,7 @@ module.exports = {
     ]
   },
   resolve: {
+    fallback: { path: require.resolve('path-browserify') },
     extensions: ['*', '.js', '.jsx', '.scss', '.css'],
     alias: {
       'jquery$': 'jquery/dist/jquery.min.js'
