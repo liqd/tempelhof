@@ -70,6 +70,7 @@ module.exports = {
         test: /(fonts|files)\/.*\.(svg|woff2?|ttf|eot|otf)(\?.*)?$/,
         loader: 'file-loader',
         options: {
+          import: false,
           name: 'fonts/[name].[ext]'
         }
       },
@@ -77,6 +78,7 @@ module.exports = {
         test: /\.svg$|\.png$/,
         loader: 'file-loader',
         options: {
+          import: false,
           name: 'images/[name].[ext]'
         }
       }
