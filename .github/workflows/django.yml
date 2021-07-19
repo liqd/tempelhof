@@ -2,9 +2,9 @@ name: Django CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -54,7 +54,7 @@ jobs:
           flake8 tempelhof --exclude migrations,settings
           npm run lint
       - name: Deploy
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         env:
           TRAVIS_SSH_SECRET: ${{ secrets.DEPLOY }}
         run: |
