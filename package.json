@@ -20,7 +20,7 @@
     "jquery-colorbox": "1.6.4",
     "postcss-loader": "5.2.0",
     "roboto-fontface": "0.10.0",
-    "sass-loader": "11.0.1",
+    "sass-loader": "12.6.0",
     "sass-planifolia": "0.6.0",
     "terser-webpack-plugin": "5.1.1",
     "webpack": "5.34.0",
