@@ -108,6 +108,8 @@ DATABASES = {
     }
 }
 
+# default primary key field
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
