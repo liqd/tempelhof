@@ -19,23 +19,28 @@ module.exports = {
     ]
   },
   output: {
-    libraryTarget: 'this',
-    library: '[name]',
+    library: {
+      name: '[name]',
+      // return value of entry point will be assigned this.
+      type: 'this'
+    },
     path: path.resolve('./tempelhof/static/'),
     publicPath: '/static/'
   },
   externals: {
-    'django': 'django'
+    django: 'django'
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules\/(?!(bootstrap)\/).*/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env'].map(require.resolve),
-          plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-transform-modules-commonjs']
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'].map(require.resolve),
+            plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-transform-modules-commonjs']
+          }
         }
       },
       {
@@ -45,13 +50,12 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader
           },
           {
-            loader: 'css-loader',
+            loader: 'css-loader'
           },
           {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                ident: 'postcss',
                 plugins: [
                   require('autoprefixer')
                 ]
@@ -65,16 +69,17 @@ module.exports = {
       },
       {
         test: /(fonts|files)\/.*\.(svg|woff2?|ttf|eot|otf)(\?.*)?$/,
-        loader: 'file-loader',
-        options: {
-          name: 'fonts/[name].[ext]'
+        type: 'asset/resource',
+        generator: {
+          // defines custom location of those files
+          filename: 'fonts/[name][ext]'
         }
       },
       {
         test: /\.svg$|\.png$/,
-        loader: 'file-loader',
-        options: {
-          name: 'images/[name].[ext]'
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]'
         }
       }
     ]
@@ -110,7 +115,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [{
         from: './tempelhof/assets/images/**/*',
-        to: 'images/[name].[ext]',
+        to: 'images/[name][ext]',
       }]
     })
   ]
