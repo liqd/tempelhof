@@ -7,7 +7,7 @@
     "@babel/plugin-transform-runtime": "7.17.0",
     "@babel/preset-env": "7.16.11",
     "@babel/runtime": "7.17.8",
-    "@fortawesome/fontawesome-free": "5.15.3",
+    "@fortawesome/fontawesome-free": "5.15.4",
     "autoprefixer": "10.4.4",
     "babel-loader": "8.2.4",
     "css-loader": "6.7.1",
