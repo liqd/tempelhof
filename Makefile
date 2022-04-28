@@ -2,6 +2,24 @@ VIRTUAL_ENV ?= venv
 NODE_BIN = node_modules/.bin
 SOURCE_DIRS = apps tempelhof
 
+.PHONY: all
+all: help
+
+.PHONY: help
+help:
+	@echo It will either use an exisiting virtualenv if it was entered
+	@echo before or create a new one in the venv subdirectory.
+	@echo
+	@echo usage:
+	@echo
+	@echo "  make install         				-- install dev setup"
+	@echo "  make makemessages    				-- create new po files from the source"
+	@echo "  make server          				-- start a dev server"
+	@echo "  make watch           				-- start a dev server and rebuild js and css files on changes"
+	@echo "  make lint            				-- lint all project files"
+	@echo "  make release         				-- build everything required for a release"
+	@echo "  make clean           				-- delete node modules and venv"
+
 .PHONY: install
 install:
 	npm install --no-save
@@ -41,3 +59,9 @@ release:
 	$(VIRTUAL_ENV)/bin/python3 -m pip install -r requirements.txt -q
 	$(VIRTUAL_ENV)/bin/python3 manage.py compilemessages -v0
 	$(VIRTUAL_ENV)/bin/python3 manage.py collectstatic --noinput -v0
+
+.PHONY: clean
+clean:
+	if [ -f package-lock.json ]; then rm package-lock.json; fi
+	if [ -d node_modules ]; then rm -rf node_modules; fi
+	if [ -d venv ]; then rm -rf venv; fi
