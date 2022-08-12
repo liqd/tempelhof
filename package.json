@@ -14,7 +14,7 @@
     "copy-webpack-plugin": "10.2.4",
     "file-loader": "6.2.0",
     "flatpickr": "4.6.13",
-    "mini-css-extract-plugin": "2.6.0",
+    "mini-css-extract-plugin": "2.6.1",
     "node-sass": "7.0.1",
     "jquery": "3.6.0",
     "jquery-colorbox": "1.6.4",
