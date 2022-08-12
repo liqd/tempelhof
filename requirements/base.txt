@@ -1,6 +1,6 @@
 brotli==1.0.9
 Django==3.2.13
-django-cloudflare-push==0.2.1
+django-cloudflare-push==0.2.2
 django-sites==0.11
 raven==6.10.0
 wagtail==2.16.1
