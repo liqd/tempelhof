@@ -3,13 +3,15 @@
     "config:base"
   ],
 
-  "automerge": false,
-  "major": {
-    "automerge": false
-  },
-  "devDependencies": {
+  "dependencies": {
+    "updateTypes": ["minor", "patch"],
     "automerge": true
   },
+  "devDependencies": {
+    "updateTypes": ["minor", "patch"],
+    "automerge": true
+  },
+
   "digest": {
     "enabled": false
   },
@@ -26,8 +28,14 @@
       {
         "matchPackageNames": ["mapbox-gl"],
         "enabled": false
+      },
+      {
+        "matchPackageNames": ["Django"],
+        "allowedVersions": "=3.2"
       }
     ],
 
-  "schedule": ["on tuesday"]
+  "pip_requirements": {
+    "fileMatch": ["^requirements/.*\\.txt$"]
+  }
 }
