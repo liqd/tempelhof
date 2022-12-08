@@ -1,12 +1,12 @@
 from django.db import models
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
-from wagtail.admin import edit_handlers
-from wagtail.core import blocks
-from wagtail.core import fields
-from wagtail.core.models import Orderable
-from wagtail.core.models import Page
-from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail import blocks
+from wagtail import fields
+from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import InlinePanel
+from wagtail.models import Orderable
+from wagtail.models import Page
 from wagtail.snippets.models import register_snippet
 
 from apps.home.blocks import ColumnsListBlock
@@ -32,11 +32,11 @@ class HomePage(Page):
         ('columns', ColumnsListBlock()),
         ('projects', CurrentProjectsListBlock()),
         ('updates', UpdatesBlock())
-    ])
+    ], use_json_field=True)
 
     content_panels = Page.content_panels + [
-        ImageChooserPanel('image'),
-        edit_handlers.StreamFieldPanel('body'),
+        FieldPanel('image'),
+        FieldPanel('body'),
     ]
 
     parent_page_types = [
@@ -48,8 +48,8 @@ class SimplePage(Page):
     body = fields.RichTextField(blank=True)
 
     content_panels = [
-        edit_handlers.FieldPanel('title'),
-        edit_handlers.FieldPanel('body'),
+        FieldPanel('title'),
+        FieldPanel('body'),
     ]
 
     parent_page_types = [
@@ -73,8 +73,8 @@ class MenuItem(models.Model):
         return self.title
 
     panels = [
-        edit_handlers.FieldPanel('title'),
-        edit_handlers.PageChooserPanel('link_page')
+        FieldPanel('title'),
+        FieldPanel('link_page')
     ]
 
 
@@ -86,8 +86,8 @@ class NavigationMenu(ClusterableModel):
         return self.title
 
     panels = [
-        edit_handlers.FieldPanel('title'),
-        edit_handlers.InlinePanel('items')
+        FieldPanel('title'),
+        InlinePanel('items')
     ]
 
 

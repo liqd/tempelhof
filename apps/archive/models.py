@@ -1,9 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from wagtail.admin import edit_handlers
-from wagtail.core import fields
-from wagtail.core.models import Page
-from wagtail.images import edit_handlers as image_handlers
+from wagtail import fields
+from wagtail.admin.panels import FieldPanel
+from wagtail.models import Page
 
 from .blocks import ArchiveListBlock
 
@@ -11,7 +10,7 @@ from .blocks import ArchiveListBlock
 class ArchivePage(Page):
     body = fields.StreamField([
         ('archive_list', ArchiveListBlock()),
-    ])
+    ], use_json_field=True)
 
     description = models.CharField(max_length=200)
     image = models.ForeignKey(
@@ -23,9 +22,9 @@ class ArchivePage(Page):
     )
 
     content_panels = Page.content_panels + [
-        edit_handlers.FieldPanel('description'),
-        image_handlers.ImageChooserPanel('image'),
-        edit_handlers.StreamFieldPanel('body'),
+        FieldPanel('description'),
+        FieldPanel('image'),
+        FieldPanel('body'),
     ]
 
     class Meta:

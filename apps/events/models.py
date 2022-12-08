@@ -5,9 +5,11 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
-from wagtail.admin import edit_handlers
-from wagtail.core.fields import RichTextField
-from wagtail.core.models import Page
+from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldRowPanel
+from wagtail.admin.panels import MultiFieldPanel
+from wagtail.fields import RichTextField
+from wagtail.models import Page
 
 
 class CalendarPage(Page):
@@ -71,21 +73,21 @@ class EventPage(Page):
     description = RichTextField()
 
     content_panels = Page.content_panels + [
-        edit_handlers.MultiFieldPanel([
-            edit_handlers.FieldPanel('date'),
-            edit_handlers.FieldRowPanel(
+        MultiFieldPanel([
+            FieldPanel('date'),
+            FieldRowPanel(
                 [
-                    edit_handlers.FieldPanel('time_start'),
-                    edit_handlers.FieldPanel('time_end')
+                    FieldPanel('time_start'),
+                    FieldPanel('time_end')
                 ]
             ),
-            edit_handlers.FieldPanel('place'),
-            edit_handlers.FieldPanel('contact'),
+            FieldPanel('place'),
+            FieldPanel('contact'),
         ], heading='Key Data'),
 
-        edit_handlers.MultiFieldPanel([
-            edit_handlers.RichTextFieldPanel('description'),
-            edit_handlers.FieldPanel('short_description'),
+        MultiFieldPanel([
+            FieldPanel('description'),
+            FieldPanel('short_description'),
         ], heading='Text'),
     ]
 
