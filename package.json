@@ -29,17 +29,19 @@
   },
   "devDependencies": {
     "husky": "8.0.2",
+    "postcss": "8.4.19",
+    "postcss-scss": "4.0.6",
     "stylelint": "14.16.0",
-    "stylelint-config-standard": "22.0.0",
+    "stylelint-config-standard": "29.0.0",
+    "stylelint-config-standard-scss": "6.1.0",
     "stylelint-declaration-strict-value": "1.9.1",
-    "webpack-cli": "5.0.1",
-    "postcss": "8.4.19"
+    "webpack-cli": "5.0.1"
   },
   "scripts": {
     "build:prod": "webpack --config webpack.prod.js --mode production",
     "build": "webpack --config webpack.dev.js --mode development",
     "watch": "webpack --config webpack.dev.js --watch --mode development",
-    "lint": "stylelint 'tempelhof/assets/scss/**/*.scss' --syntax scss"
+    "lint": "stylelint 'tempelhof/assets/scss/**/*.scss'"
   },
   "browserslist": "last 3 versions, ie >= 11",
   "husky": {

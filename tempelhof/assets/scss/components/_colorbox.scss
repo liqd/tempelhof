@@ -1,5 +1,5 @@
 // Colorbox mostly has IDs only, so we have to use that for styling.
-/* stylelint-disable selector-no-id, selector-max-specificity  */
+/* stylelint-disable selector-id-pattern, selector-no-id, selector-max-specificity  */
 #cboxOverlay {
     width: 100%;
     height: 100%;

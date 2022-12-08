@@ -1,16 +1,16 @@
-@import '~sass-planifolia/sass/math';
-@import '~sass-planifolia/sass/clearfix';
-@import '~sass-planifolia/sass/grid';
-@import '~sass-planifolia/sass/contrast';
-@import '~flatpickr/dist/flatpickr.css';
+@import "~sass-planifolia/sass/math";
+@import "~sass-planifolia/sass/clearfix";
+@import "~sass-planifolia/sass/grid";
+@import "~sass-planifolia/sass/contrast";
+@import "~flatpickr/dist/flatpickr.css";
 
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
 
-@import 'base';
-@import 'layout';
-@import 'fonts';
-@import 'wagtail';
+@import "base";
+@import "layout";
+@import "fonts";
+@import "wagtail";
 
 @import "components/archive_list";
 @import "components/label";
@@ -28,7 +28,7 @@
 @import "components/colorbox";
 @import "components/page_header";
 @import "components/pagination";
-@import 'components/portal_header';
+@import "components/portal_header";
 @import "components/project_block";
 @import "components/teasers_block";
 @import "components/updates_block";
@@ -37,4 +37,4 @@
 @import "components/data-list";
 @import "components/sections-icon";
 
-@import 'utilities';
+@import "utilities";

@@ -1,5 +1,14 @@
 {
-  "extends": "stylelint-config-standard",
+  "extends": [
+    "stylelint-config-standard-scss"
+  ],
+  "ignoreFiles": [
+    "**/_variables.scss"
+  ],
+  "plugins": [
+    "stylelint-declaration-strict-value"
+  ],
+  "customSyntax": "postcss-scss",
   "rules": {
     "font-family-name-quotes": "always-unless-keyword",
 
@@ -8,11 +17,21 @@
 
     "block-opening-brace-newline-after": "always",
 
+    "selector-class-pattern": "^([a-z][a-z0-9]*)((.|-|--|_|__)[a-z0-9]+)*$",
     "selector-attribute-quotes": "always",
     "selector-no-vendor-prefix": true,
     "selector-pseudo-element-colon-notation": "single",
     "no-duplicate-selectors": true,
     "selector-max-specificity": "0,3,1",
+
+    "scss/no-global-function-names": null,
+
+    "no-extra-semicolons": true,
+    "scss/dollar-variable-pattern": "^([a-z][a-z0-9]*)((-|--|_|__)[a-z0-9]+)*$",
+    "declaration-colon-newline-after": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "alpha-value-notation": null,
+    "color-function-notation": null,
 
     "at-rule-empty-line-before": [ "always", {
       "except": ["first-nested"],
@@ -31,6 +50,10 @@
 
     "indentation": 4,
     "max-nesting-depth": 2,
+
+    "scale-unlimited/declaration-strict-value": ["/color/", {
+      "ignoreKeywords": ["inherit", "transparent"]
+    }],
 
     "declaration-empty-line-before": null
   }
