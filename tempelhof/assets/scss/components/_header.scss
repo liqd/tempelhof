@@ -104,14 +104,14 @@
 .dialogue-box__right {
     flex: 1 0 auto;
     background-position: left center;
-    background-image: url('../images/dialoguebox_border.png');
+    background-image: url("../images/dialoguebox_border.png");
     background-repeat: repeat-x;
 }
 
 .dialogue-box__center {
     flex: 0 1 70rem;
     background-position: right -250px center;
-    background-image: url('../images/dialoguebox.png');
+    background-image: url("../images/dialoguebox.png");
     background-repeat: no-repeat;
 
     @media (min-width: $breakpoint) {
