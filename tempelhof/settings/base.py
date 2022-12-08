@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'wagtail.images',
     'wagtail.search',
     'wagtail.admin',
-    'wagtail.core',
+    'wagtail',
     'wagtail.contrib.styleguide',
 
     'modelcluster',
@@ -148,9 +148,3 @@ MEDIA_URL = '/media/'
 
 WAGTAIL_SITE_NAME = "tempelhof"
 WAGTAILIMAGES_IMAGE_MODEL = 'images.CustomImage'
-
-WAGTAILADMIN_RICH_TEXT_EDITORS = {
-    'default': {
-        'WIDGET': 'wagtail.admin.rich_text.HalloRichTextArea'
-    }
-}

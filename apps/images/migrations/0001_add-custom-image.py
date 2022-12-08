@@ -7,7 +7,7 @@ import wagtail.images.models
 import django.db.models.deletion
 import wagtail.search.index
 from django.conf import settings
-import wagtail.core.models
+import wagtail.models
 
 
 class Migration(migrations.Migration):
@@ -34,7 +34,7 @@ class Migration(migrations.Migration):
                 ('focal_point_height', models.PositiveIntegerField(null=True, blank=True)),
                 ('file_size', models.PositiveIntegerField(null=True, editable=False)),
                 ('author', models.CharField(default='THF', max_length=128, blank=True)),
-                ('collection', models.ForeignKey(default=wagtail.core.models.get_root_collection_id, related_name='+', verbose_name='collection', to='wagtailcore.Collection', on_delete=models.CASCADE)),
+                ('collection', models.ForeignKey(default=wagtail.models.get_root_collection_id, related_name='+', verbose_name='collection', to='wagtailcore.Collection', on_delete=models.CASCADE)),
                 ('tags', taggit.managers.TaggableManager(through='taggit.TaggedItem', blank=True, to='taggit.Tag', verbose_name='tags', help_text=None)),
                 ('uploaded_by_user', models.ForeignKey(null=True, blank=True, to=settings.AUTH_USER_MODEL, verbose_name='uploaded by user', on_delete=django.db.models.deletion.SET_NULL, editable=False)),
             ],

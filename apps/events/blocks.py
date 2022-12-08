@@ -1,5 +1,5 @@
 from django.utils import timezone
-from wagtail.core import blocks
+from wagtail import blocks
 
 from apps.events.models import EventPage
 

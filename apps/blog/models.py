@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from wagtail.admin import edit_handlers
-from wagtail.core import fields as wagtail_fields
-from wagtail.core.models import Page
+from wagtail import fields as wagtail_fields
+from wagtail.admin.panels import FieldPanel
+from wagtail.models import Page
 
 from apps.contrib.mixins import PaginatorMixin
 
@@ -11,7 +11,7 @@ class BlogIndexPage(PaginatorMixin, Page):
     description = models.CharField(max_length=200)
 
     content_panels = Page.content_panels + [
-        edit_handlers.FieldPanel('description'),
+        FieldPanel('description'),
     ]
 
     class Meta:
@@ -30,7 +30,7 @@ class BlogEntryPage(Page):
     text = wagtail_fields.RichTextField()
 
     content_panels = Page.content_panels + [
-        edit_handlers.RichTextFieldPanel('text'),
+        FieldPanel('text'),
     ]
 
     class Meta:

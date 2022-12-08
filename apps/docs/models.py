@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from wagtail.admin import edit_handlers
-from wagtail.core import fields
-from wagtail.core.models import Page
+from wagtail import fields
+from wagtail.admin.panels import FieldPanel
+from wagtail.models import Page
 
 from .blocks import DocsBlock
 
@@ -10,13 +10,13 @@ from .blocks import DocsBlock
 class DocsPage(Page):
     body = fields.StreamField([
         ('documents_list', DocsBlock())
-    ])
+    ], use_json_field=True)
 
     description = models.CharField(max_length=200)
 
     content_panels = Page.content_panels + [
-        edit_handlers.FieldPanel('description'),
-        edit_handlers.StreamFieldPanel('body'),
+        FieldPanel('description'),
+        FieldPanel('body'),
     ]
 
     class Meta:

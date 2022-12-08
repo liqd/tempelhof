@@ -1,9 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from wagtail.admin import edit_handlers
-from wagtail.core import fields
-from wagtail.core.models import Page
-from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail import fields
+from wagtail.admin.panels import FieldPanel
+from wagtail.models import Page
 
 
 class ProjectIndexPage(Page):
@@ -32,9 +31,9 @@ class ProjectContainerPage(Page):
     description = fields.RichTextField()
 
     content_panels = Page.content_panels + [
-        edit_handlers.FieldPanel('short_description'),
-        edit_handlers.FieldPanel('description'),
-        ImageChooserPanel('image'),
+        FieldPanel('short_description'),
+        FieldPanel('description'),
+        FieldPanel('image'),
     ]
 
     class Meta:
@@ -66,12 +65,12 @@ class ProjectPage(Page):
     embed_code = models.TextField()
 
     content_panels = Page.content_panels + [
-        edit_handlers.FieldPanel('short_description'),
-        edit_handlers.FieldPanel('description'),
-        ImageChooserPanel('image'),
-        edit_handlers.FieldPanel('start_date'),
-        edit_handlers.FieldPanel('end_date'),
-        edit_handlers.FieldPanel('embed_code'),
+        FieldPanel('short_description'),
+        FieldPanel('description'),
+        FieldPanel('image'),
+        FieldPanel('start_date'),
+        FieldPanel('end_date'),
+        FieldPanel('embed_code'),
     ]
 
     class Meta:

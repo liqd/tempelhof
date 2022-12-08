@@ -3,8 +3,8 @@
 import apps.home.blocks
 import apps.projects.blocks
 from django.db import migrations
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='homepage',
             name='body',
-            field=wagtail.core.fields.StreamField([('text', wagtail.core.blocks.RichTextBlock(icon='doc-full', template='home/blocks/text.html')), ('teasers', wagtail.core.blocks.StructBlock([('teasers', wagtail.core.blocks.ListBlock(apps.home.blocks.TeaserBlock))])), ('columns', wagtail.core.blocks.StructBlock([('columns', wagtail.core.blocks.ListBlock(apps.home.blocks.ColumnBlock))])), ('projects', wagtail.core.blocks.StructBlock([('title', wagtail.core.blocks.CharBlock()), ('projects', wagtail.core.blocks.ListBlock(apps.projects.blocks.CurrentProjectBlock, help_text='Chose one or more Project Pages. Other pagetypes will result in an error.', target_model='projects.ProjectPage'))])), ('updates', wagtail.core.blocks.StructBlock([('status', wagtail.core.blocks.PageChooserBlock(page_type=['blog.BlogEntryPage'])), ('calendar', wagtail.core.blocks.StructBlock([('calendar_link_text', wagtail.core.blocks.CharBlock(required=False)), ('calendar_link', wagtail.core.blocks.PageChooserBlock(page_type=['events.CalendarPage'], required=False))]))]))]),
+            field=wagtail.fields.StreamField([('text', wagtail.blocks.RichTextBlock(icon='doc-full', template='home/blocks/text.html')), ('teasers', wagtail.blocks.StructBlock([('teasers', wagtail.blocks.ListBlock(apps.home.blocks.TeaserBlock))])), ('columns', wagtail.blocks.StructBlock([('columns', wagtail.blocks.ListBlock(apps.home.blocks.ColumnBlock))])), ('projects', wagtail.blocks.StructBlock([('title', wagtail.blocks.CharBlock()), ('projects', wagtail.blocks.ListBlock(apps.projects.blocks.CurrentProjectBlock, help_text='Chose one or more Project Pages. Other pagetypes will result in an error.', target_model='projects.ProjectPage'))])), ('updates', wagtail.blocks.StructBlock([('status', wagtail.blocks.PageChooserBlock(page_type=['blog.BlogEntryPage'])), ('calendar', wagtail.blocks.StructBlock([('calendar_link_text', wagtail.blocks.CharBlock(required=False)), ('calendar_link', wagtail.blocks.PageChooserBlock(page_type=['events.CalendarPage'], required=False))]))]))]),
         ),
     ]

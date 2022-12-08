@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import wagtail.core.fields
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             name='BlogEntryPage',
             fields=[
                 ('page_ptr', models.OneToOneField(serialize=False, parent_link=True, auto_created=True, primary_key=True, to='wagtailcore.Page', on_delete=models.CASCADE)),
-                ('text', wagtail.core.fields.RichTextField()),
+                ('text', wagtail.fields.RichTextField()),
             ],
             options={
                 'abstract': False,
