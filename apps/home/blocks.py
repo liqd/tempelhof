@@ -5,7 +5,7 @@ from apps.events.blocks import EventsTeaserBlock
 
 
 class TeaserBlock(blocks.StructBlock):
-    text = blocks.RichTextBlock()
+    text = blocks.RichTextBlock(required=False)
     button_text = blocks.CharBlock()
     button_link = blocks.PageChooserBlock()
     icon = IconBlock()

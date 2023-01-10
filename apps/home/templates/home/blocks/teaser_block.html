@@ -2,6 +2,10 @@
 
 <div class="teasers-block__item l-col-3">
     <i class="fa {{ value.icon }} teasers-block__icon"></i>
+    {% if value.text %}
     <div class="teasers-block__text">{{ value.text|richtext }}</div>
+    {% else %}
+    <div class="teasers-block__spacer"></div>
+    {% endif %}
     <a href="{% pageurl value.button_link %}" class="button button--primary">{{ value.button_text }}</a>
 </div>
