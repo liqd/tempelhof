@@ -12,7 +12,7 @@
     <div class="l-wrapper">
         <div class="l-center-8">
             <div id="calendar" class="calendar"></div>
-            <ul class="calendar-list calendar-list--calendar">
+            <ul class="calendar-list--calendar">
                 {% for event in js_events|dictsort:'date' %}
                     <li class="calendar-list__item calendar-list__item--calendar" data-date="{{ event.date|date:'Y-n-d' }}">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
