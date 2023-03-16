@@ -34,7 +34,7 @@
     "stylelint": "14.16.1",
     "stylelint-config-standard": "29.0.0",
     "stylelint-config-standard-scss": "6.1.0",
-    "stylelint-declaration-strict-value": "1.9.1",
+    "stylelint-declaration-strict-value": "1.9.2",
     "webpack-cli": "5.0.1"
   },
   "scripts": {
