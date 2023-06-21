@@ -23,7 +23,7 @@
     "sass-loader": "13.3.2",
     "sass-planifolia": "0.6.0",
     "terser-webpack-plugin": "5.3.9",
-    "webpack": "5.77.0",
+    "webpack": "5.87.0",
     "webpack-merge": "5.9.0",
     "path-browserify": "1.0.1"
   },
