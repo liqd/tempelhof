@@ -2,11 +2,59 @@
 
 All notable changes to this project will be documented in this file.
 
-Since version <unreleased> the format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+Since version v2306 the format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 This project (not yet) adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## v2306 - 2023-06-27
 
+### Added
+* Add Changelog
+
+### Fixes
+* change renovate rules to show lts updates for django and wagtail
+
+### Changed
+* change wording of senatsverwaltung by @goapunk in https://github.com/liqd/tempelhof/pull/476
+* remove deprecated stylelint rules by @goapunk in https://github.com/liqd/tempelhof/pull/493
+* update dependency @babel/runtime to v7.20.13 by @renovate in https://github.com/liqd/tempelhof/pull/450
+* update dependency webpack to v5.76.0 [security] by @renovate in https://github.com/liqd/tempelhof/pull/457
+* update dependency stylelint-declaration-strict-value to v1.9.2 by @renovate in https://github.com/liqd/tempelhof/pull/458
+* update dependency autoprefixer to v10.4.14 by @renovate in https://github.com/liqd/tempelhof/pull/459
+* update dependency jquery to v3.6.4 by @renovate in https://github.com/liqd/tempelhof/pull/460
+* update dependency mini-css-extract-plugin to v2.7.5 by @renovate in https://github.com/liqd/tempelhof/pull/461
+* update dependency terser-webpack-plugin to v5.3.7 by @renovate in https://github.com/liqd/tempelhof/pull/462
+* update dependency webpack to v5.76.2 by @renovate in https://github.com/liqd/tempelhof/pull/463
+* update babel monorepo by @renovate in https://github.com/liqd/tempelhof/pull/464
+* update dependency postcss-loader to v7.1.0 by @renovate in https://github.com/liqd/tempelhof/pull/465
+* update babel monorepo to v7.21.4 by @renovate in https://github.com/liqd/tempelhof/pull/468
+* update dependency sass-loader to v13.2.2 by @renovate in https://github.com/liqd/tempelhof/pull/469
+* update dependency webpack to v5.77.0 by @renovate in https://github.com/liqd/tempelhof/pull/470
+* update dependency isort to v5.12.0 by @renovate in https://github.com/liqd/tempelhof/pull/433
+* update dependency postcss to v8.4.24 by @renovate in https://github.com/liqd/tempelhof/pull/475
+* update dependency whitenoise to v6.5.0 by @renovate in https://github.com/liqd/tempelhof/pull/442
+* update dependency django to v3.2.19 [security] by @renovate in https://github.com/liqd/tempelhof/pull/456
+* update dependency sentry-sdk to v1.14.0 [security] by @renovate in https://github.com/liqd/tempelhof/pull/467
+* update dependency flake8-docstrings to v1.7.0 by @renovate in https://github.com/liqd/tempelhof/pull/451
+* update dependency psycopg2 to v2.9.6 by @renovate in https://github.com/liqd/tempelhof/pull/473
+* update dependency wagtail to v4.1.4 [security] by @renovate in https://github.com/liqd/tempelhof/pull/472
+* update dependency sentry-sdk to v1.25.1 by @renovate in https://github.com/liqd/tempelhof/pull/479
+* update dependency mini-css-extract-plugin to v2.7.6 by @renovate in https://github.com/liqd/tempelhof/pull/477
+* update babel monorepo to v7.22.5 by @renovate in https://github.com/liqd/tempelhof/pull/481
+* update dependency sass-loader to v13.3.2 by @renovate in https://github.com/liqd/tempelhof/pull/485
+* update dependency terser-webpack-plugin to v5.3.9 by @renovate in https://github.com/liqd/tempelhof/pull/478
+* update dependency css-loader to v6.8.1 by @renovate in https://github.com/liqd/tempelhof/pull/482
+* update dependency jquery to v3.7.0 by @renovate in https://github.com/liqd/tempelhof/pull/483
+* update dependency postcss-loader to v7.3.3 by @renovate in https://github.com/liqd/tempelhof/pull/484
+* update dependency webpack-merge to v5.9.0 by @renovate in https://github.com/liqd/tempelhof/pull/487
+* update dependency webpack to v5.87.0 by @renovate in https://github.com/liqd/tempelhof/pull/486
+* update dependency webpack-cli to v5.1.4 by @renovate in https://github.com/liqd/tempelhof/pull/480
+* update dependency node-sass to v9 by @renovate in https://github.com/liqd/tempelhof/pull/490
+* update dependency wagtail to v4.1.6 by @renovate in https://github.com/liqd/tempelhof/pull/491
+* update dependency webpack to v5.88.0 by @renovate in https://github.com/liqd/tempelhof/pull/492
+* update dependency stylelint to v15.9.0 by @renovate in https://github.com/liqd/tempelhof/pull/454
+* update dependency sentry-sdk to v1.26.0 by @renovate in https://github.com/liqd/tempelhof/pull/494
+
+**Full Changelog**: https://github.com/liqd/tempelhof/compare/v2301...v2306
 ## v2301
 ### What's Changed
 * chore(deps): update dependency postcss to v8.4.14 by @renovate in https://github.com/liqd/tempelhof/pull/383
