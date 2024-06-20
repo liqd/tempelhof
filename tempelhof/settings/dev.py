@@ -3,6 +3,8 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+WAGTAILADMIN_BASE_URL = "http://127.0.01:8007"
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '&m55jactzpy(qq3y0x=4(_w@m$59%61y@a0qb%8f_%(utcx0gi'
 
