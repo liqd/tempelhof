@@ -2,7 +2,6 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include
 from django.urls import path
-from django.urls import re_path
 from django.views.generic import TemplateView
 from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
@@ -13,8 +12,8 @@ urlpatterns = [
     path('django-admin/', admin.site.urls),
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
-    re_path(r'^sitemap\.xml$', wagtail_sitemap),
-    re_path(r'^robots\.txt$', TemplateView.as_view(
+    path('sitemap.xml', wagtail_sitemap),
+    path('robots.txt', TemplateView.as_view(
         template_name='robots.txt',
         content_type="text/plain"), name="robots_file"),
 
