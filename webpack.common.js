@@ -16,14 +16,12 @@ module.exports = {
       '@fortawesome/fontawesome-free/scss/regular.scss',
       '@fortawesome/fontawesome-free/scss/solid.scss',
       'jquery'
-    ]
+    ],
+    wagtail: {
+      import: './apps/contrib/assets/wagtail.js'
+    },
   },
   output: {
-    library: {
-      name: '[name]',
-      // return value of entry point will be assigned this.
-      type: 'this'
-    },
     path: path.resolve('./tempelhof/static/'),
     publicPath: '/static/'
   },
