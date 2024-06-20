@@ -8,5 +8,5 @@ tempelhof/static/fonts
 tempelhof/static/images/Roboto*
 media/
 venv/
-static/
+./static/
 .idea/

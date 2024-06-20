@@ -1,7 +1,6 @@
 /* global eventsData */
-const Flatpickr = require('flatpickr')
-const FlatpickrLocale = require('flatpickr/dist/l10n/de.js')
-const $ = require('jquery')
+import flatpickr from "flatpickr";
+import { German } from "flatpickr/dist/l10n/de.js"
 
 const calendar = document.getElementById('calendar')
 
@@ -9,9 +8,9 @@ if (calendar) {
   const $events = $('.calendar-list__item')
   const selectorPattern = '[data-date^="{}"]'
 
-  let calendarFlatpickr = new Flatpickr(calendar, {
+  let calendarFlatpickr = flatpickr(calendar, {
     inline: true,
-    locale: FlatpickrLocale[$('html').attr('lang')],
+    locale: German,
     enable: [
       date => {
         return eventsData.some(eventObj => {
