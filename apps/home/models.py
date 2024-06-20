@@ -5,6 +5,7 @@ from wagtail import blocks
 from wagtail import fields
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import InlinePanel
+from wagtail.admin.panels import TitleFieldPanel
 from wagtail.models import Orderable
 from wagtail.models import Page
 from wagtail.snippets.models import register_snippet
@@ -48,7 +49,7 @@ class SimplePage(Page):
     body = fields.RichTextField(blank=True)
 
     content_panels = [
-        FieldPanel('title'),
+        TitleFieldPanel('title'),
         FieldPanel('body'),
     ]
 
@@ -73,7 +74,7 @@ class MenuItem(models.Model):
         return self.title
 
     panels = [
-        FieldPanel('title'),
+        TitleFieldPanel('title'),
         FieldPanel('link_page')
     ]
 
@@ -86,7 +87,7 @@ class NavigationMenu(ClusterableModel):
         return self.title
 
     panels = [
-        FieldPanel('title'),
+        TitleFieldPanel('title'),
         InlinePanel('items')
     ]
 
