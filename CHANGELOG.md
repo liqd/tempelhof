@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 Since version v2306 the format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 This project (not yet) adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v2407.1
+
+###
+
+- script top automatically create changelog from files in the changelog folder
+
+### Changed
+
+- update django rest to 3.15.1 to avoid bigger versions coming from wagtail and incompatible with django 3.2
+- update wagtail to 5.2.5
+- add wagtail hook to make richtext toolbar sticky by default
+- webpack: don't output entrypoints as library, we don't need it and it will
+  just print errors on the console
+- Django from 3.2.20 to 4.0
+ - `re_path` with `path` for included urls.
+- Django from 4.0 to 4.2
+ - production settings for storage
+ - from psycopg2 to psycopg3
+- sentry to 2.3.1
+
+### Fixed
+
+- fix calendar not shown because Flatpickr constructor changed
+
+### Removed
+
+ - `USE_L10N` in settings as it is now True by default
+- deprecated stylelint rules (15.x)
+
 ## v2306 - 2023-06-27
 
 ### Added
