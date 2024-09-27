@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "husky": "9.1.6",
-    "postcss": "8.4.40",
+    "postcss": "8.4.47",
     "postcss-scss": "4.0.9",
     "stylelint": "16.8.1",
     "stylelint-config-standard": "36.0.1",
