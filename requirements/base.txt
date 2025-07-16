@@ -2,6 +2,6 @@ brotli==1.1.0
 Django==4.2.13
 django-cloudflare-push==0.2.2
 django-sites==0.11
-wagtail==6.0.1
+wagtail==6.1.1
 sentry-sdk==2.7.0
 whitenoise==6.7.0
