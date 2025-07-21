@@ -28,7 +28,7 @@
     "path-browserify": "1.0.1"
   },
   "devDependencies": {
-    "husky": "9.1.6",
+    "husky": "9.1.7",
     "postcss": "8.4.47",
     "postcss-scss": "4.0.9",
     "stylelint": "16.9.0",
