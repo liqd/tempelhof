@@ -21,7 +21,7 @@
     "postcss-loader": "8.1.1",
     "roboto-fontface": "0.10.0",
     "sass-loader": "14.2.1",
-    "sass-planifolia": "0.6.0",
+    "sass-planifolia": "1.0.0",
     "terser-webpack-plugin": "5.3.14",
     "webpack": "5.95.0",
     "webpack-merge": "5.10.0",
