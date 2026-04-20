@@ -6,6 +6,7 @@ tempelhof/static/*.css
 tempelhof/static/*.js
 tempelhof/static/fonts
 tempelhof/static/images/Roboto*
+tempelhof/static/
 media/
 venv/
 ./static/
