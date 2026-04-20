@@ -5,9 +5,22 @@ All notable changes to this project will be documented in this file.
 Since version v2306 the format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 This project (not yet) adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## v2604.1
+
+### Changed
+
+- Update Django to 5.2.13
+- Update Wagtail to 6.3.5
+- Update psycopg[c] to 3.3.3
+- Update sentry-sdk to 2.58.0
+- Update whitenoise to 6.12.0
+- Update django-sites to 0.11
+
+
 ## v2407.1
 
-###
+### Added
 
 - script top automatically create changelog from files in the changelog folder
 
