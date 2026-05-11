@@ -6,6 +6,13 @@ Since version v2306 the format is based on [Keep a Changelog](https://keepachang
 This project (not yet) adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## v2605.1
+
+### Changed
+
+- Update Wagtail to 7.4 (LTS)
+
+
 ## v2604.1
 
 ### Changed
